@@ -1,0 +1,8 @@
+- Katzen (in Form von Pfoten), welche die Reisschüssel umschubsen wollen 
+  -> QuickTimeEvent -> Left/Right Button
+- Die Mayo muss im Takt der Musik gepresst/geschüttelt werden, ansonsten fließt keine Mayo 
+  -> Rädchen drehen
+- Tetris-Blöcke, welche die Sicht der spielenden Person langsam verdecken, sofern sie es nicht schafft, volle Reihen zu kreierten 
+  -> Vier Buttons für Left/Right Movement/Rotation
+- NiceToHave Feature: Erdbeben 
+  -> QuickTimeEvent mit ButtonMashing

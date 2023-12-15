@@ -8,12 +8,14 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ec1ddae17d0e82a9",
+            "id": "5aaaf4ddc1f14823",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Whiteboard/2023-12-15_0001_3.jpg"
+                "file": "Controls.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Whiteboard/2023-12-15_0001_3.jpg",
+                "file": "Controls.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Whiteboard/2023-12-15_0001_3.jpg",
+                "file": "Controls.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Whiteboard/2023-12-15_0001_3.jpg"
+                "file": "Controls.md"
               }
             }
           }
@@ -144,22 +146,32 @@
       "command-palette:Befehlspalette öffnen": false
     }
   },
-  "active": "ec1ddae17d0e82a9",
+  "active": "c1cb5724941bfa85",
   "lastOpenFiles": [
-    "Whiteboard/2023-12-15_0001_2.jpg",
+    "References/Controls.jpg",
+    "References/Happy Face - Concept.jpg",
+    "References/POW-Effect.jpg",
+    "References/Nutrition Info for Kewpie Mayo.png",
+    "References/Mayo.jpg",
+    "Assets.md",
+    "References/Mayo.jpg.crdownload",
+    "Visuals.md",
+    "Overview.md",
     "Whiteboard/2023-12-15_0001_1.jpg",
-    "Spielidee.md",
-    "Whiteboard/2023-12-15_0001_3.jpg",
+    "References/Cat-Paws.jpg",
+    "References/Cat-Paws.jpg.crdownload",
+    "References/POW-Effect.jpg.crdownload",
+    "References/Kewpie Mayonaise.jpg",
+    "References/Happy Face - Zundamon.jpg",
+    "Controls.md",
+    "Whiteboard/2023-12-15_0001_2.jpg",
+    "Mechanics.md",
+    "References/Kewpie Mayonaise.jpg.crdownload",
     "Whiteboard",
     "Neuer Ordner",
-    "References/8b2ea1f10b561b9767256765e2c0f7a9.jpg",
-    "References/Pasted image 20231215203902.png",
-    "References/Zundamon.jpg",
     "References/Zundamon.jpg.crdownload",
-    "Assets.md",
     "References/8b2ea1f10b561b9767256765e2c0f7a9.jpg.crdownload",
     "References.md",
-    "Pasted image 20231215203902.png",
     "References"
   ]
 }
