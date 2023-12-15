@@ -11,11 +11,9 @@
             "id": "ec1ddae17d0e82a9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Spielidee.md",
-                "mode": "source",
-                "source": false
+                "file": "Whiteboard/2023-12-15_0001_3.jpg"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spielidee.md",
+                "file": "Whiteboard/2023-12-15_0001_3.jpg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spielidee.md",
+                "file": "Whiteboard/2023-12-15_0001_3.jpg",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spielidee.md"
+                "file": "Whiteboard/2023-12-15_0001_3.jpg"
               }
             }
           }
@@ -148,16 +146,20 @@
   },
   "active": "ec1ddae17d0e82a9",
   "lastOpenFiles": [
+    "Whiteboard/2023-12-15_0001_2.jpg",
+    "Whiteboard/2023-12-15_0001_1.jpg",
+    "Spielidee.md",
+    "Whiteboard/2023-12-15_0001_3.jpg",
+    "Whiteboard",
+    "Neuer Ordner",
     "References/8b2ea1f10b561b9767256765e2c0f7a9.jpg",
     "References/Pasted image 20231215203902.png",
-    "Spielidee.md",
     "References/Zundamon.jpg",
     "References/Zundamon.jpg.crdownload",
     "Assets.md",
     "References/8b2ea1f10b561b9767256765e2c0f7a9.jpg.crdownload",
     "References.md",
     "Pasted image 20231215203902.png",
-    "References",
-    "Neuer Ordner"
+    "References"
   ]
 }
