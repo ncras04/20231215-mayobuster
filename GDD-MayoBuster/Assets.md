@@ -1,7 +1,13 @@
-Reisschüssel
-Tisch mit schöner Tischdecke
-Raum
-Mayo
-Euterspender
-( Mayo-Portionsbeutel )
+- [ ] Reisschüssel
+- [ ] Tisch mit schöner Tischdecke
+- [ ] Raum
+- [ ] Mayo
+-> Herunterfließende Mayo + LineArt für Mayospirale
+- [ ] Kewpie Mayoflasche
+- [ ] "Happy Face" mit Händen (2D)
+-> verschiedene Emotionen
+- [ ] Katzenpfoten
+-> verschiedene Fellfarben
+- [ ] POW!-Effekt
+- [ ] kcal-Skala
 
