@@ -1,0 +1,158 @@
+{
+    "name": "PlayerInputs",
+    "maps": [
+        {
+            "name": "Inputs",
+            "id": "17c1295f-eff2-4c45-9d40-61cf0bb73a61",
+            "actions": [
+                {
+                    "name": "KnobInput",
+                    "type": "Value",
+                    "id": "0ee69410-b282-42d0-88db-cfc76bd597d6",
+                    "expectedControlType": "Delta",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "QuickTime",
+                    "type": "Button",
+                    "id": "50a0796e-2280-488c-a6d6-bd16e223b150",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FX-Buttons",
+                    "type": "Value",
+                    "id": "09b3e939-6a80-42d8-82af-29d22fed769f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "265d6e2b-c982-4517-a1f8-b22cd7c0887b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Secret",
+                    "type": "Button",
+                    "id": "7035d5ed-cda0-4290-8ab0-41eabd15d351",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "66aaea77-66a5-4355-a068-847e8c0c14ba",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "KnobInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e075430a-12b4-4a90-a416-7c898b996816",
+                    "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuickTime",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "996bc09c-1b71-4e93-bc7e-d2abaef0ac4a",
+                    "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuickTime",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06f3546f-19f1-4d80-a0f5-77b034352acc",
+                    "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuickTime",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43ed4535-45bc-42e1-b773-28f164867f81",
+                    "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuickTime",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f23442c2-96ec-4e04-9288-dd376e2f1b34",
+                    "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FX-Buttons",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "716d80bb-b716-44f2-8bac-b447a8795b0b",
+                    "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FX-Buttons",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4ba0d37-63ac-4c8d-84c3-929e8056d2b6",
+                    "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06ce33c2-9925-489e-9e7f-ebd154e2fb96",
+                    "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Secret",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
