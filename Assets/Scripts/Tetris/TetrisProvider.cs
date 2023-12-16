@@ -91,6 +91,7 @@ namespace Tetris
                 if (canMovePart(left))
                 {
                     movePart(left);
+                    onBoardUpdated?.Invoke(board);
                 }
             }
             if (Input.GetKeyDown("right"))
@@ -99,15 +100,18 @@ namespace Tetris
                 if (canMovePart(right))
                 {
                     movePart(right);
+                    onBoardUpdated?.Invoke(board);
                 }
             }
             if (Input.GetKeyDown("up"))
             {
                 rotate(true);
+                onBoardUpdated?.Invoke(board);
             }
             if (Input.GetKeyDown("down"))
             {
                 rotate(false);
+                onBoardUpdated?.Invoke(board);
             }
         }
 
