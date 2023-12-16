@@ -13,7 +13,7 @@ namespace Helpers
         // Update is called once per frame
         void Update()
         {
-            if (!Input.GetKey(KeyCode.LeftControl))
+            if (!Input.GetKey(KeyCode.LeftShift))
                 return;
             if (Input.GetKeyDown(KeyCode.S))
             {
