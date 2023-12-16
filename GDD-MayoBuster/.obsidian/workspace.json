@@ -11,9 +11,11 @@
             "id": "8f78d450a9ed6c7e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Controls_Picture.jpg"
+                "file": "Controls.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Controls_Picture.jpg",
+                "file": "Controls.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Controls_Picture.jpg",
+                "file": "Controls.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Controls_Picture.jpg"
+                "file": "Controls.md"
               }
             }
           }
@@ -147,21 +149,22 @@
   },
   "active": "8f78d450a9ed6c7e",
   "lastOpenFiles": [
-    "Controls.md",
-    "Controls_Overview.md",
-    "Controls_Picture.jpg",
-    "Whiteboard/GameProgrammerAufgabenverteilung.jpg",
-    "Overview.md",
     "Whiteboard/VisualisationGameConcept.jpg",
+    "Whiteboard/GameProgrammerAufgabenverteilung.jpg",
+    "References/Soundanzeige.jpg",
+    "Excalidraw/Controls.jpg",
+    "Excalidraw",
+    "Controls_Picture.jpg",
+    "Controls_Overview.md",
+    "Controls.md",
+    "Overview.md",
     "Assets.md",
     "Whiteboard/2023-12-15_0001_2.jpg",
-    "References/Soundanzeige.jpg",
     "References/POW-Effect.jpg",
     "References/Nutrition Info for Kewpie Mayo.png",
     "References/Mayo.jpg",
     "References/Kewpie Mayonaise.jpg",
     "References/Cat-Paws.jpg",
-    "Excalidraw",
     "Mechanics.md",
     "References/Soundanzeige.jpg.~tmp",
     "References/Soundanzeige.jpg.crdownload",
