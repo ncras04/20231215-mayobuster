@@ -8,15 +8,30 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SoundData : ScriptableObject
 {
-    public AudioClip m_songFile;
+    public int[,] SheetData
+    {
+        get
+        {
+            if (m_sheetData == null)
+                MakeData();
 
-    private int[,] pauseData;
-    public TextAsset soundData;
+            return m_sheetData;
+        }
+    }
+
+    public AudioClip SongFile => m_songFile;
+
+    [SerializeField]
+    private AudioClip m_songFile;
+
+    private int[,] m_sheetData;
+
+    public TextAsset TextData;
 
     [ContextMenu("Create!!")]
     public void MakeData()
     {
-        var datastring = soundData.text;
+        var datastring = TextData.text;
         var tmpArray = datastring.Split(',', StringSplitOptions.RemoveEmptyEntries)
                                     .Select(o => o.Trim(new char[] { '\r', '\n' }))
                                     .ToArray();
@@ -29,8 +44,8 @@ public class SoundData : ScriptableObject
 
         var dataSize = (int)(tmpArray.Length / 3);
 
-        if (pauseData is null)
-            pauseData = new int[dataSize, 3];
+        if (m_sheetData is null)
+            m_sheetData = new int[dataSize, 3];
 
         int value;
         int iterator = 0;
@@ -45,13 +60,13 @@ public class SoundData : ScriptableObject
                 switch (i % 3)
                 {
                     case 0:
-                        pauseData[iterator, 0] = value;
+                        m_sheetData[iterator, 0] = value;
                         break;
                     case 1:
-                        pauseData[iterator, 1] = value;
+                        m_sheetData[iterator, 1] = value;
                         break;
                     case 2:
-                        pauseData[iterator, 2] = value;
+                        m_sheetData[iterator, 2] = value;
                         break;
                 }
             }

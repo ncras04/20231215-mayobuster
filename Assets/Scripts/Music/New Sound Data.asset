@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c761ae53cb8460f4197ec0ab69aab97f, type: 3}
   m_Name: New Sound Data
   m_EditorClassIdentifier: 
-  m_songFile: {fileID: 0}
-  soundData: {fileID: 4900000, guid: 50613726477020645829bf7e874e06b9, type: 3}
+  m_songFile: {fileID: 8300000, guid: 6586ddeccf692bb4ebdcdbbbdb433bb3, type: 3}
+  TextData: {fileID: 4900000, guid: 50613726477020645829bf7e874e06b9, type: 3}
