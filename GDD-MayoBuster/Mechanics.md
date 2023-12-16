@@ -1,8 +1,15 @@
-- Katzen (in Form von Pfoten), welche die Reisschüssel umschubsen wollen 
+- ##### Katzen (in Form von Pfoten) 
+  Wollen die Reisschüssel umschubsen 
   -> QuickTimeEvent -> Left/Right Button
-- Die Mayo muss im Takt der Musik gepresst/geschüttelt werden, ansonsten fließt keine Mayo 
+  
+- ##### Mayoflasche
+  Muss nach Takt/Tonhöhe der Musik geschüttelt/gepresst werden, ansonsten fließt keine Mayo 
   -> Rädchen drehen
-- Tetris-Blöcke, welche die Sicht der spielenden Person langsam verdecken, sofern sie es nicht schafft, volle Reihen zu kreierten 
+  
+- ##### Tetris-Blöcke 
+  Verdecken langsam die Sicht der spielenden Person, sofern sie es nicht schafft, volle Reihen zu kreierten 
   -> Vier Buttons für Left/Right Movement/Rotation
-- NiceToHave Feature: Erdbeben 
+
+#### NiceToHave Features:
+- ##### Erdbeben 
   -> QuickTimeEvent mit ButtonMashing
