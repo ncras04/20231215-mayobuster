@@ -6,6 +6,7 @@ using System.Net.Security;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using System.Linq;
+using UnityEditor.Timeline.Actions;
 
 public class Tetris : MonoBehaviour
 {
@@ -49,18 +50,21 @@ public class Tetris : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time > 0.2)
+        if (time > 0.2)
         {
             onTick();
             time = 0;
         }
+
+
     }
 
     void onTick()
     {
         if (currentPart == null)
         {
-            currentPart = createNewPart();
+            var posibleParts = new char[] { 'I', 'J', 'L', 'O', 'S', 'Z', 'T' };
+            currentPart = createNewPart(posibleParts[UnityEngine.Random.Range(0, posibleParts.Length)]);
         }
         var down = new Direction { x = 0, y = 1 };
         if (canMovePart(down))
@@ -73,11 +77,27 @@ public class Tetris : MonoBehaviour
         }
     }
 
-    Part? createNewPart()
+    Part? createNewPart(char c)
     {
-        // I 
-        Part? currentPart = new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 5, y = 0 } } };
-        Array.ForEach(currentPart.Value.fields, field => board[field.x, field.y] = 'I');
+        Func<Part?> partCreator =() =>
+        {
+            switch (c)
+            {
+                case 'I': return new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 5, y = 0 } } };
+                case 'J': return new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 4, y = 1 } } };
+                case 'L': return new Part { fields = new Field[] { new Field { x = 3, y = 1 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 5, y = 0 } } };
+                case 'O': return new Part { fields = new Field[] { new Field { x = 3, y = 1 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 4, y = 1 } } };
+                case 'S': return new Part { fields = new Field[] { new Field { x = 2, y = 1 }, new Field { x = 3, y = 1 }, new Field { x = 4, y = 0 }, new Field { x = 3, y = 0 } } };
+                case 'Z': return new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 1 }, new Field { x = 3, y = 1 } } };
+                case 'T': return new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 3, y = 1 } } };
+            }
+            return null;
+        };
+        currentPart = partCreator();
+        if (currentPart != null)
+        {
+            Array.ForEach(currentPart.Value.fields, field => board[field.x, field.y] = c);
+        }
         return currentPart;
     }
 
