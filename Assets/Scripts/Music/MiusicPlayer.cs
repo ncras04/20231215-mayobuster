@@ -1,3 +1,4 @@
+using GameState;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -64,7 +65,18 @@ public class MiusicPlayer : MonoBehaviour
         m_source = GetComponent<AudioSource>();
         m_source.playOnAwake = false;
         m_source.Stop();
+
+        Config.CurrentState.OnValueChanged += CurrentStateChanged;
     }
+
+    private void CurrentStateChanged(EGameState _old, EGameState _new)
+    {
+        if (_new == EGameState.GAME_OVER)
+        {
+            m_source.Stop();
+        }
+    }
+
     void Start()
     {
         m_source.clip = m_track.SongFile;

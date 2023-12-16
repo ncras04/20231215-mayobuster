@@ -3,6 +3,7 @@ using UnityEngine.Pool;
 using UnityEngine.Audio;
 using System.Threading.Tasks;
 using Audio;
+using UnityEngine.SceneManagement;
 
 
 [DefaultExecutionOrder(-1000)]
@@ -101,6 +102,14 @@ public class AudioManager : MonoBehaviour
     {
         m_requests.OnAdd += OnSoundRequest;
         m_BGMRequests.OnAdd += OnBGMRequest;
+
+        SceneManager.activeSceneChanged += ClearPoolOnSceneLoad;
+    }
+
+    private void ClearPoolOnSceneLoad(Scene _old, Scene _new)
+    {
+        Debug.Log("Clear");
+        m_pool.Clear();
     }
 
     async void QueueSong(AudioSource _isWaiting, float _isWaitingVolume, AudioSource _isPlaying, float _duration)
