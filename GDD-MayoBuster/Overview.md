@@ -6,5 +6,4 @@ Folgende Hindernisse stellen sich der spielenden Person dabei in den Weg:
 - Tetris-Blöcke, welche die Sicht der spielenden Person langsam verdecken, sofern sie es nicht schafft, volle Reihen zu kreierten
 
 
-
-
+![[VisualisationGameConcept.jpg]]

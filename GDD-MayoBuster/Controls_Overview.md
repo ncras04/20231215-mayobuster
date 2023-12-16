@@ -24,7 +24,7 @@ BT-D ^kLfO7NTH
 
 
 # Embedded files
-0f43d7aab69d0869d868c0e434bcea602a63f8c4: [[Pasted Image 20231216011315_067.jpg]]
+0f43d7aab69d0869d868c0e434bcea602a63f8c4: [[Controls_Picture.jpg]]
 
 %%
 # Drawing

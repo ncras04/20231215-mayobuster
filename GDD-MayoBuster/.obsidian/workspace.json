@@ -11,11 +11,9 @@
             "id": "8f78d450a9ed6c7e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Controls.md",
-                "mode": "source",
-                "source": false
+                "file": "Controls_Picture.jpg"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Controls.md",
+                "file": "Controls_Picture.jpg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Controls.md",
+                "file": "Controls_Picture.jpg",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Controls.md"
+                "file": "Controls_Picture.jpg"
               }
             }
           }
@@ -149,9 +147,13 @@
   },
   "active": "8f78d450a9ed6c7e",
   "lastOpenFiles": [
-    "Controls_Overview.md",
-    "Assets.md",
     "Controls.md",
+    "Controls_Overview.md",
+    "Controls_Picture.jpg",
+    "Whiteboard/GameProgrammerAufgabenverteilung.jpg",
+    "Overview.md",
+    "Whiteboard/VisualisationGameConcept.jpg",
+    "Assets.md",
     "Whiteboard/2023-12-15_0001_2.jpg",
     "References/Soundanzeige.jpg",
     "References/POW-Effect.jpg",
@@ -159,14 +161,10 @@
     "References/Mayo.jpg",
     "References/Kewpie Mayonaise.jpg",
     "References/Cat-Paws.jpg",
-    "References/Controls.jpg",
-    "References/Happy Face - Concept.jpg",
-    "References/Happy Face - Zundamon.jpg",
     "Excalidraw",
     "Mechanics.md",
     "References/Soundanzeige.jpg.~tmp",
     "References/Soundanzeige.jpg.crdownload",
-    "Overview.md",
     "Visuals.md",
     "Excalidraw/Drawing 2023-12-15 23.32.16.excalidraw.md",
     "Excalidraw/Unbenannt.md",
