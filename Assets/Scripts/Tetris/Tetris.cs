@@ -43,7 +43,7 @@ public class Tetris : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        UnityEngine.Random.InitState((int)DateTime.Now.Ticks);
     }
 
     // Update is called once per frame
@@ -56,7 +56,30 @@ public class Tetris : MonoBehaviour
             time = 0;
         }
 
-
+        if (Input.GetKeyDown("left"))
+        {
+            var left = new Direction { x = -1, y = 0 };
+            if (canMovePart(left))
+            {
+                movePart(left);
+            }
+        }
+        if (Input.GetKeyDown("right"))
+        {
+            var right = new Direction { x = 1, y = 0 };
+            if (canMovePart(right))
+            {
+                movePart(right);
+            }
+        }
+        if(Input.GetKeyDown("up"))
+        {
+            rotate(true);
+        }
+        if (Input.GetKeyDown("down"))
+        {
+            rotate(false);
+        }
     }
 
     void onTick()
@@ -120,6 +143,59 @@ public class Tetris : MonoBehaviour
         }
         return false;
     }
+
+    void rotate(bool left)
+    {
+        if (currentPart != null)
+        {
+            var newPos =left ? calcPosRotatedLeft(currentPart.Value.fields) : calcPosRotatedRight(currentPart.Value.fields);
+            foreach (var it in currentPart.Value.fields.Select((Value, Index) => new { Value, Index }))
+            {
+                if (blockingField(currentPart.Value, newPos[it.Index]))
+                {
+                    return;
+                }
+            }
+            char currentChar = board[currentPart.Value.fields[0].x, currentPart.Value.fields[0].y];
+            Array.ForEach(currentPart.Value.fields, field => board[field.x, field.y] = (char)0);
+            currentPart = new Part { fields = newPos };
+            Array.ForEach(currentPart.Value.fields, field => board[field.x, field.y] = currentChar);
+        }
+    }
+
+    Field[] calcPosRotatedLeft(Field[] startPos)
+    {
+        var vec = startPos.Select(field => new Vector2Int { x = field.x, y = field.y }).ToArray();
+
+        var dif = vec[1] - vec[0];
+        vec[0] = vec[1] + new Vector2Int { x = -dif.y, y = dif.x };
+
+         dif = vec[1] - vec[2];
+        vec[2] = vec[1] + new Vector2Int { x = -dif.y, y = dif.x };
+
+         dif = vec[1] - vec[3];
+        vec[3] = vec[1] + new Vector2Int { x = -dif.y, y = dif.x };
+
+
+        return vec.Select(field => new Field { x = field.x, y = field.y }).ToArray(); ;
+    }
+    Field[] calcPosRotatedRight(Field[] startPos)
+    {
+        var vec = startPos.Select(field => new Vector2Int { x = field.x, y = field.y }).ToArray();
+
+        var dif = vec[1] - vec[0];
+        vec[0] = vec[1] + new Vector2Int { x = dif.y, y = dif.x };
+
+        dif = vec[1] - vec[2];
+        vec[2] = vec[1] + new Vector2Int { x = dif.y, y = dif.x };
+
+        dif = vec[1] - vec[3];
+        vec[3] = vec[1] + new Vector2Int { x = dif.y, y = dif.x };
+
+
+        return vec.Select(field => new Field { x = field.x, y = field.y }).ToArray(); ;
+    }
+
 
     bool blockingField(Part part, Field fieldToTest)
     {
