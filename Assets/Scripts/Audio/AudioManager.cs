@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Audio;
 
 
+[DefaultExecutionOrder(-1000)]
 public class AudioManager : MonoBehaviour
 {
     private string m_tag = "AudioManager";
