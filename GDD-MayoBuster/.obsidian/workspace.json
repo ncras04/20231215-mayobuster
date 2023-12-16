@@ -11,9 +11,11 @@
             "id": "8f78d450a9ed6c7e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "References/Soundanzeige.jpg"
+                "file": "Assets.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "References/Soundanzeige.jpg",
+                "file": "Assets.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "References/Soundanzeige.jpg",
+                "file": "Assets.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "References/Soundanzeige.jpg"
+                "file": "Assets.md"
               }
             }
           }
@@ -147,28 +149,27 @@
   },
   "active": "8f78d450a9ed6c7e",
   "lastOpenFiles": [
-    "References/Controls.jpg",
-    "References/Cat-Paws.jpg",
-    "Mechanics.md",
-    "Assets.md",
-    "References/Soundanzeige.jpg.~tmp",
-    "References/Soundanzeige.jpg",
-    "References/Soundanzeige.jpg.crdownload",
     "Controls.md",
     "Controls_Overview.md",
-    "Overview.md",
-    "Pasted Image 20231216011315_067.jpg",
-    "Excalidraw/Controls.jpg",
-    "Visuals.md",
-    "Pasted Image 20231215233421_181.jpg",
-    "Whiteboard/2023-12-15_0001_1.jpg",
+    "Assets.md",
+    "Whiteboard/2023-12-15_0001_2.jpg",
+    "References/Soundanzeige.jpg",
+    "References/POW-Effect.jpg",
+    "References/Nutrition Info for Kewpie Mayo.png",
+    "References/Mayo.jpg",
     "References/Kewpie Mayonaise.jpg",
-    "References/Happy Face - Zundamon.jpg",
+    "References/Cat-Paws.jpg",
+    "References/Controls.jpg",
     "References/Happy Face - Concept.jpg",
+    "References/Happy Face - Zundamon.jpg",
+    "Excalidraw",
+    "Mechanics.md",
+    "References/Soundanzeige.jpg.~tmp",
+    "References/Soundanzeige.jpg.crdownload",
+    "Overview.md",
+    "Visuals.md",
     "Excalidraw/Drawing 2023-12-15 23.32.16.excalidraw.md",
     "Excalidraw/Unbenannt.md",
-    "Excalidraw",
-    "References/POW-Effect.jpg",
     "References/Mayo.jpg.crdownload",
     "References/Cat-Paws.jpg.crdownload",
     "References/POW-Effect.jpg.crdownload",
