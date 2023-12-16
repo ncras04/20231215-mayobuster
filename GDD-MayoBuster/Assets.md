@@ -1,15 +1,15 @@
-1. Reisschüssel 🍚 
-2. Tisch mit wunderschöner Tischdecke
-3. Kewpie Mayoflasche
-4. "Happy Face" mit Händen (2D) -> verschiedene Emotionen
-5. Soundanzeige (Thermometer mit transparentem Innenleben)
-6. Katzenpfoten -> verschiedene Fellfarben
-7. POW!-Effekt
-8. Menschenhand
-9. Revolver
-10. Cat-Kill-Anzeige
-11. Raum
-12. Blut-Effekte
+1. Reisschüssel 🍚 [Janica]
+2. Tisch mit wunderschöner Tischdecke [Janica]
+3. Kewpie Mayoflasche [Janica]
+4. "Happy Face" mit Händen (2D) -> verschiedene Emotionen [Janica]
+5. Soundanzeige (Thermometer mit transparentem Innenleben) [Leo]
+6. Katzenpfoten -> verschiedene Fellfarben [Janica] & [Leo]
+7. POW!-Effekt [Janica]
+8. Menschenhand [Leo]
+9. Revolver [Janica]
+10. Cat-Kill-Anzeige [Janica]
+11. Raum [Janica]
+12. Blut-Effekte [Leo] or [Janica]
 
 - [ ] Reisschüssel
 - [ ] Tisch mit wunderschöner Tischdecke
