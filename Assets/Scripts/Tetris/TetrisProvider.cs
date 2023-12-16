@@ -11,14 +11,20 @@ namespace Tetris
         {
             add
             {
-                m_onBoardUpdated -= value;
-                m_onBoardUpdated += value;
+                onBoardUpdated -= value;
+                onBoardUpdated += value;
             }
             remove
             {
-                m_onBoardUpdated -= value;
+                onBoardUpdated -= value;
             }
         }
+
+        public int Width => width;
+        public int Height => height;
+
+        [SerializeField]
+        private bool debugVisualize = false;
 
         [SerializeField]
         private int width = 16;
@@ -33,7 +39,7 @@ namespace Tetris
 
         private char[,] board;
 
-        private event System.Action<char[,]> m_onBoardUpdated;
+        private event System.Action<char[,]> onBoardUpdated;
 
         TetrisProvider()
         {
@@ -118,7 +124,7 @@ namespace Tetris
             {
                 currentPart = null;
             }
-            m_onBoardUpdated?.Invoke(board);
+            onBoardUpdated?.Invoke(board);
         }
 
         Part? createNewPart(char c)
@@ -277,6 +283,9 @@ namespace Tetris
 
         private void OnDrawGizmos()
         {
+            if (!debugVisualize)
+                return;
+
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
@@ -304,6 +313,9 @@ namespace Tetris
 
         void OnGUI()
         {
+            if (!debugVisualize)
+                return;
+
             draw();
         }
 
