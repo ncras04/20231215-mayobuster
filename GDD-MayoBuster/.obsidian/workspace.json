@@ -11,11 +11,9 @@
             "id": "8f78d450a9ed6c7e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Controls.md",
-                "mode": "source",
-                "source": false
+                "file": "References/Soundanzeige.jpg"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Controls.md",
+                "file": "References/Soundanzeige.jpg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Controls.md",
+                "file": "References/Soundanzeige.jpg",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Controls.md"
+                "file": "References/Soundanzeige.jpg"
               }
             }
           }
@@ -149,11 +147,16 @@
   },
   "active": "8f78d450a9ed6c7e",
   "lastOpenFiles": [
-    "Controls_Overview.md",
-    "Controls.md",
+    "References/Controls.jpg",
+    "References/Cat-Paws.jpg",
     "Mechanics.md",
-    "Overview.md",
     "Assets.md",
+    "References/Soundanzeige.jpg.~tmp",
+    "References/Soundanzeige.jpg",
+    "References/Soundanzeige.jpg.crdownload",
+    "Controls.md",
+    "Controls_Overview.md",
+    "Overview.md",
     "Pasted Image 20231216011315_067.jpg",
     "Excalidraw/Controls.jpg",
     "Visuals.md",
@@ -163,11 +166,9 @@
     "References/Happy Face - Zundamon.jpg",
     "References/Happy Face - Concept.jpg",
     "Excalidraw/Drawing 2023-12-15 23.32.16.excalidraw.md",
-    "References/Controls.jpg",
     "Excalidraw/Unbenannt.md",
     "Excalidraw",
     "References/POW-Effect.jpg",
-    "References/Nutrition Info for Kewpie Mayo.png",
     "References/Mayo.jpg.crdownload",
     "References/Cat-Paws.jpg.crdownload",
     "References/POW-Effect.jpg.crdownload",
@@ -175,8 +176,6 @@
     "Whiteboard",
     "Neuer Ordner",
     "References/Zundamon.jpg.crdownload",
-    "References/8b2ea1f10b561b9767256765e2c0f7a9.jpg.crdownload",
-    "References.md",
-    "References"
+    "References.md"
   ]
 }
