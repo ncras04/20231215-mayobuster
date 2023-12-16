@@ -1,20 +1,21 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Net.Security;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using System.Linq;
-using UnityEditor.Timeline.Actions;
 
 public class Tetris : MonoBehaviour
 {
 
     [SerializeField]
     private int width = 10;
+
     [SerializeField]
     private int height = 20;
+
+    [SerializeField]
+    private float tickTime = 0.2f;
+
+    private bool TetrisGameOver = false;
+
     private char[,] board;
     Tetris()
     {
@@ -50,7 +51,7 @@ public class Tetris : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > 0.2)
+        if (time > tickTime)
         {
             onTick();
             time = 0;
@@ -72,7 +73,7 @@ public class Tetris : MonoBehaviour
                 movePart(right);
             }
         }
-        if(Input.GetKeyDown("up"))
+        if (Input.GetKeyDown("up"))
         {
             rotate(true);
         }
@@ -93,6 +94,7 @@ public class Tetris : MonoBehaviour
         if (canMovePart(down))
         {
             movePart(down);
+            removeFullLines();
         }
         else
         {
@@ -102,7 +104,7 @@ public class Tetris : MonoBehaviour
 
     Part? createNewPart(char c)
     {
-        Func<Part?> partCreator =() =>
+        Func<Part?> partCreator = () =>
         {
             switch (c)
             {
@@ -119,7 +121,23 @@ public class Tetris : MonoBehaviour
         currentPart = partCreator();
         if (currentPart != null)
         {
-            Array.ForEach(currentPart.Value.fields, field => board[field.x, field.y] = c);
+
+            Array.ForEach(currentPart.Value.fields, field =>
+            {
+                if(board[field.x, field.y] != 0)
+                {
+                    TetrisGameOver = true;
+                }
+                if (!TetrisGameOver)
+                {
+                    board[field.x, field.y] = c;
+                }
+
+            });
+        }
+        if(TetrisGameOver)
+        {
+            currentPart = null;
         }
         return currentPart;
     }
@@ -148,7 +166,13 @@ public class Tetris : MonoBehaviour
     {
         if (currentPart != null)
         {
-            var newPos =left ? calcPosRotatedLeft(currentPart.Value.fields) : calcPosRotatedRight(currentPart.Value.fields);
+            char currentChar = board[currentPart.Value.fields[0].x, currentPart.Value.fields[0].y];
+            if (currentChar == 'O')
+            {
+                return;
+            }
+
+            var newPos = left ? calcPosRotatedLeft(currentPart.Value.fields) : calcPosRotatedRight(currentPart.Value.fields);
             foreach (var it in currentPart.Value.fields.Select((Value, Index) => new { Value, Index }))
             {
                 if (blockingField(currentPart.Value, newPos[it.Index]))
@@ -156,43 +180,35 @@ public class Tetris : MonoBehaviour
                     return;
                 }
             }
-            char currentChar = board[currentPart.Value.fields[0].x, currentPart.Value.fields[0].y];
             Array.ForEach(currentPart.Value.fields, field => board[field.x, field.y] = (char)0);
             currentPart = new Part { fields = newPos };
             Array.ForEach(currentPart.Value.fields, field => board[field.x, field.y] = currentChar);
         }
     }
 
+    Vector2Int[] rotate(Vector2Int[] vec, int dir)
+    {
+        var dif = vec[1] - vec[0];
+        vec[0] = vec[1] + new Vector2Int { x = Math.Sign(dir)* dif.y, y = dif.x };
+
+        dif = vec[1] - vec[2];
+        vec[2] = vec[1] + new Vector2Int { x = Math.Sign(dir) * dif.y, y = dif.x };
+
+        dif = vec[1] - vec[3];
+        vec[3] = vec[1] + new Vector2Int { x = Math.Sign(dir) * dif.y, y = dif.x };
+        return vec;
+    }
+
     Field[] calcPosRotatedLeft(Field[] startPos)
     {
         var vec = startPos.Select(field => new Vector2Int { x = field.x, y = field.y }).ToArray();
-
-        var dif = vec[1] - vec[0];
-        vec[0] = vec[1] + new Vector2Int { x = -dif.y, y = dif.x };
-
-         dif = vec[1] - vec[2];
-        vec[2] = vec[1] + new Vector2Int { x = -dif.y, y = dif.x };
-
-         dif = vec[1] - vec[3];
-        vec[3] = vec[1] + new Vector2Int { x = -dif.y, y = dif.x };
-
-
+        vec = rotate(vec, -1);
         return vec.Select(field => new Field { x = field.x, y = field.y }).ToArray(); ;
     }
     Field[] calcPosRotatedRight(Field[] startPos)
     {
         var vec = startPos.Select(field => new Vector2Int { x = field.x, y = field.y }).ToArray();
-
-        var dif = vec[1] - vec[0];
-        vec[0] = vec[1] + new Vector2Int { x = dif.y, y = dif.x };
-
-        dif = vec[1] - vec[2];
-        vec[2] = vec[1] + new Vector2Int { x = dif.y, y = dif.x };
-
-        dif = vec[1] - vec[3];
-        vec[3] = vec[1] + new Vector2Int { x = dif.y, y = dif.x };
-
-
+        vec = rotate(vec, 1);
         return vec.Select(field => new Field { x = field.x, y = field.y }).ToArray(); ;
     }
 
@@ -218,14 +234,35 @@ public class Tetris : MonoBehaviour
         return board[fieldToTest.x, fieldToTest.y] == 0;
     }
 
+    void removeFullLines()
+    {
+        for (int y = 0; y < height; y++)
+        {
+            var row = Enumerable.Range(0, board.GetLength(0))
+                .Select(x => board[x, y])
+                .ToArray();
+            if (row.All(c => c != 0))
+            {
+                for (int i = y; i > 0; i--)
+                {
+                    for (int x = 0; x < width; x++)
+                    {
+                        board[x, i] = board[x, i - 1];
+                    }
+                }
+            }
+        }
+    }
+
+
     private void OnDrawGizmos()
     {
-        for(int x = 0; x < width; x++)
+        for (int x = 0; x < width; x++)
         {
-            for(int y = 0; y < height; y++)
+            for (int y = 0; y < height; y++)
             {
-                Gizmos.color  = getColor(board[x, y]);
-                Gizmos.DrawCube(new Vector3(x+0.5f, 0, y+0.5f), Vector3.one);
+                Gizmos.color = getColor(board[x, y]);
+                Gizmos.DrawCube(new Vector3(x + 0.5f, 0, y + 0.5f), Vector3.one);
             }
         }
     }
