@@ -1,15 +1,16 @@
 using System;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class Tetris : MonoBehaviour
 {
 
     [SerializeField]
-    private int width = 10;
+    private int width = 16;
 
     [SerializeField]
-    private int height = 20;
+    private int height = 12;
 
     [SerializeField]
     private float tickTime = 0.2f;
@@ -108,13 +109,13 @@ public class Tetris : MonoBehaviour
         {
             switch (c)
             {
-                case 'I': return new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 5, y = 0 } } };
-                case 'J': return new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 4, y = 1 } } };
-                case 'L': return new Part { fields = new Field[] { new Field { x = 3, y = 1 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 5, y = 0 } } };
-                case 'O': return new Part { fields = new Field[] { new Field { x = 3, y = 1 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 4, y = 1 } } };
-                case 'S': return new Part { fields = new Field[] { new Field { x = 2, y = 1 }, new Field { x = 3, y = 1 }, new Field { x = 4, y = 0 }, new Field { x = 3, y = 0 } } };
-                case 'Z': return new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 1 }, new Field { x = 3, y = 1 } } };
-                case 'T': return new Part { fields = new Field[] { new Field { x = 2, y = 0 }, new Field { x = 3, y = 0 }, new Field { x = 4, y = 0 }, new Field { x = 3, y = 1 } } };
+                case 'I': return new Part { fields = new Field[] { new Field { x = width / 2-1, y = 0 }, new Field { x = width / 2, y = 0 }, new Field { x = width / 2 +1, y = 0 }, new Field { x = width / 2 + 2, y = 0 } } };
+                case 'J': return new Part { fields = new Field[] { new Field { x = width / 2 - 1, y = 0 }, new Field { x = width / 2, y = 0 }, new Field { x = width / 2 + 1, y = 0 }, new Field { x = width / 2 + 1, y = 1 } } };
+                case 'L': return new Part { fields = new Field[] { new Field { x = width / 2, y = 1 }, new Field { x = width / 2, y = 0 }, new Field { x = width / 2 + 1, y = 0 }, new Field { x = width / 2 + 2, y = 0 } } };
+                case 'O': return new Part { fields = new Field[] { new Field { x = width / 2, y = 1 }, new Field { x = width / 2, y = 0 }, new Field { x = width / 2 + 1, y = 0 }, new Field { x = width / 2 + 1, y = 1 } } };
+                case 'S': return new Part { fields = new Field[] { new Field { x = width / 2 - 1, y = 1 }, new Field { x = width / 2, y = 1 }, new Field { x = width / 2 + 1, y = 0 }, new Field { x = width / 2, y = 0 } } };
+                case 'Z': return new Part { fields = new Field[] { new Field { x = width / 2 - 1, y = 0 }, new Field { x = width / 2, y = 0 }, new Field { x = width / 2 + 1, y = 1 }, new Field { x = width / 2, y = 1 } } };
+                case 'T': return new Part { fields = new Field[] { new Field { x = width / 2 - 1, y = 0 }, new Field { x = width / 2, y = 0 }, new Field { x = width / 2 + 1, y = 0 }, new Field { x = width / 2, y = 1 } } };
             }
             return null;
         };
@@ -281,5 +282,50 @@ public class Tetris : MonoBehaviour
             case 'T': return Color.white;
         }
         return Color.gray;
+    }
+
+    void OnGUI()
+    {
+        draw();
+    }
+
+    private void draw()
+    {
+        var blockWidth = Screen.width / width;
+        var blockHeight = Screen.height / height;
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if (board[x, y] != 0)
+                {
+                    GUIDrawRect(new Rect(x * blockWidth, y * blockHeight, blockWidth, blockHeight), getColor(board[x, y]));
+                }
+            }
+        }
+
+    }
+
+    private static Texture2D _staticRectTexture;
+    private static GUIStyle _staticRectStyle;
+
+    private static void GUIDrawRect(Rect position, Color color)
+    {
+        if (_staticRectTexture == null)
+        {
+            _staticRectTexture = new Texture2D(1, 1);
+        }
+
+        if (_staticRectStyle == null)
+        {
+            _staticRectStyle = new GUIStyle();
+        }
+
+        _staticRectTexture.SetPixel(0, 0, color);
+        _staticRectTexture.Apply();
+
+        _staticRectStyle.normal.background = _staticRectTexture;
+
+        GUI.Box(position, GUIContent.none, _staticRectStyle);
     }
 }
