@@ -36,6 +36,9 @@ namespace Tetris
         [SerializeField]
         private float tickTime = 0.2f;
 
+        [SerializeField]
+        private GameManager gameManager = null;
+
         private bool TetrisGameOver = false;
 
         private char[,] board;
@@ -65,6 +68,13 @@ namespace Tetris
 
         private Part? currentPart;
         private float time = 0;
+        private bool isRunning = false;
+
+        private void Awake()
+        {
+            gameManager.OnStartGame += () => isRunning = true;
+            gameManager.OnGameOver += () => isRunning = false;
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -75,7 +85,7 @@ namespace Tetris
         // Update is called once per frame
         void Update()
         {
-            if (Config.CurrentState.Value == EGameState.PAUSED)
+            if (!isRunning)
                 return;
 
             time += Time.deltaTime;
@@ -160,7 +170,7 @@ namespace Tetris
                     if (board[field.x, field.y] != 0)
                     {
                         TetrisGameOver = true;
-                        Config.CurrentState.Vote(EGameState.GAME_OVER, "Lost at tetris.");
+                        gameManager.EndGame();
                     }
                     if (!TetrisGameOver)
                     {

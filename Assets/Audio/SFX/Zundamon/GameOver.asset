@@ -15,4 +15,6 @@ MonoBehaviour:
   m_volume: 1
   m_clips:
   - {fileID: 8300000, guid: 9f8c8db301135594986fe56741c3e22e, type: 3}
+  - {fileID: 8300000, guid: 60b3e130d46dc0049a5e8e034bcf3c2b, type: 3}
+  - {fileID: 8300000, guid: a0b24551c4e5fde4da278fb4e4612a23, type: 3}
   m_isPitchAffected: 0

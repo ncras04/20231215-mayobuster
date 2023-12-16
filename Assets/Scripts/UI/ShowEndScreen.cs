@@ -7,22 +7,16 @@ namespace UI
     {
         [SerializeField]
         private RectTransform uiPanel = null;
-
+        [SerializeField]
+        private GameManager m_gameManager = null;
         private void Awake()
         {
-            Config.CurrentState.OnValueChanged += ToggleEndScreen;
+            m_gameManager.OnGameOver += DisplayEndScreen;
         }
 
-        private void ToggleEndScreen(EGameState old, EGameState current)
+        private void DisplayEndScreen()
         {
-            if (current == EGameState.GAME_OVER)
-            {
-                uiPanel.gameObject.SetActive(true);
-            }
-            else if (old  == EGameState.GAME_OVER && current != EGameState.GAME_OVER) 
-            {
-                uiPanel.gameObject.SetActive(false);
-            }
+            uiPanel.gameObject.SetActive(true);
         }
     }
 }

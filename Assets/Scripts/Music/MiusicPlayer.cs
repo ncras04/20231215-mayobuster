@@ -56,7 +56,8 @@ public class MiusicPlayer : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI hd;
-
+    [SerializeField]
+    private GameManager m_gameManager = null;
 
     private void Awake()
     {
@@ -66,15 +67,8 @@ public class MiusicPlayer : MonoBehaviour
         m_source.playOnAwake = false;
         m_source.Stop();
 
-        Config.CurrentState.OnValueChanged += CurrentStateChanged;
-    }
-
-    private void CurrentStateChanged(EGameState _old, EGameState _new)
-    {
-        if (_new == EGameState.GAME_OVER)
-        {
-            m_source.Stop();
-        }
+        m_gameManager.OnStartGame += StartPlayback;
+        m_gameManager.OnGameOver += StopPlayback;
     }
 
     void Start()
@@ -87,12 +81,6 @@ public class MiusicPlayer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            m_source.Play();
-            TrackStarted?.Invoke(m_track);
-        }
-
         if (m_source.timeSamples == 0)
             return;
 
@@ -118,5 +106,43 @@ public class MiusicPlayer : MonoBehaviour
         }
 
         hd.text = m_currentBar.BeatAmount + " " + m_beatCount;
+    }
+
+    private void StopPlayback()
+    {
+        StartCoroutine(FadeOutMusic());
+    }
+
+    private void StartPlayback()
+    {
+        m_source.Play();
+        TrackStarted?.Invoke(m_track);
+    }
+
+    private void CurrentStateChanged(bool _old, bool _new)
+    {
+        if (_new)
+        {
+            m_source.Pause();
+        }
+        else
+        {
+            m_source.Play();
+        }
+    }
+
+    private IEnumerator FadeOutMusic()
+    {
+        float time = 0.0f;
+        float currentVolume = m_source.volume;
+        while (time < 1)
+        {
+            m_source.volume = Mathf.Lerp(currentVolume, 0.0f, time);
+            time += Time.unscaledDeltaTime * 5;
+            yield return null;
+        }
+
+        m_source.Stop();
+        m_source.volume = 1.0f;
     }
 }
