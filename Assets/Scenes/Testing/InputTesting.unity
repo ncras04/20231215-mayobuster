@@ -627,7 +627,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1365542253}
         m_TargetAssemblyTypeName: InputTester, Assembly-CSharp
-        m_MethodName: ButtonInput
+        m_MethodName: OnWASDInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -642,7 +642,19 @@ MonoBehaviour:
       TURBOCHARGER VIRGOO TURBOCHARGER/button7,/VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER/button8,/VIRGOO
       TURBOCHARGER VIRGOO TURBOCHARGER/button6]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1365542253}
+        m_TargetAssemblyTypeName: InputTester, Assembly-CSharp
+        m_MethodName: OnFX_L
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 09b3e939-6a80-42d8-82af-29d22fed769f
     m_ActionName: Inputs/FX-Buttons[/VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER/button2,/VIRGOO
       TURBOCHARGER VIRGOO TURBOCHARGER/button3]
@@ -654,6 +666,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7035d5ed-cda0-4290-8ab0-41eabd15d351
     m_ActionName: Inputs/Secret[/VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER/button4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1365542253}
+        m_TargetAssemblyTypeName: InputTester, Assembly-CSharp
+        m_MethodName: OnFX_R
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c457807b-1b08-4d24-b23a-17157ef3a35a
+    m_ActionName: Inputs/FX-Button R[/VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER/button3,/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Inputs
