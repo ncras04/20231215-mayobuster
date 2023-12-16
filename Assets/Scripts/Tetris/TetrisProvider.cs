@@ -75,6 +75,9 @@ namespace Tetris
         // Update is called once per frame
         void Update()
         {
+            if (Config.CurrentState.Value == EGameState.PAUSED)
+                return;
+
             time += Time.deltaTime;
             if (time > tickTime)
             {

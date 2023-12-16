@@ -1,14 +1,16 @@
+using Transition;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace UI
 {
     [DisallowMultipleComponent]
     public class LoadSceneButton : MonoBehaviour
     {
+        [SerializeField]
+        private SceneTransitionHandler transitionHandler = null;
         public void LoadScene(string scene)
         {
-            SceneManager.LoadScene(scene);
+            transitionHandler.StartTransition(scene);
         }
     }
 }
