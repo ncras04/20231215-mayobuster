@@ -10,7 +10,7 @@ namespace Helpers
             get => value;
             set
             {
-                if (this.value == null)
+                if (this.value.Equals(value))
                     return;
                 T old = this.value;
                 this.value = value;
