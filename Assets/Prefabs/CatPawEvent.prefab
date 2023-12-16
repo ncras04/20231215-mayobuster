@@ -134,13 +134,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 054efbe187e2a194f808ad41b7354e4b, type: 3}
   - {fileID: 21300000, guid: 2b6c55f16d2d1f147bf015cff3ad2de1, type: 3}
   - {fileID: 21300000, guid: 3359569bd64e88a4d84a4dba00d8526b, type: 3}
-  - {fileID: 21300000, guid: 24373eba509621a4880e2ac106c296fe, type: 3}
+  - {fileID: 21300000, guid: 61aaa664747f0fb418ca7eab2408623d, type: 3}
+  - {fileID: 21300000, guid: dbd6246ee9701a345b095a5c07864c0c, type: 3}
   m_sfxRequestCollection: {fileID: 11400000, guid: 6667cf6279d5ad14dbc3091bb9cd7e53,
     type: 2}
   m_hitEvent: {fileID: 11400000, guid: ac4453ea62c15b04f940ab6915b5d282, type: 2}
   m_spawnEvent: {fileID: 11400000, guid: 58d708a3269f7c04985f2628808453c0, type: 2}
   m_pawPivot: {fileID: 2127355911874869477}
-  m_movementSpeed: 2
+  m_movementSpeedRange: {x: 2, y: 5}
   m_minDistanceToBowl: 2
 --- !u!1 &9126575623646603163
 GameObject:
