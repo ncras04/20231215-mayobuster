@@ -186,29 +186,30 @@ public class Tetris : MonoBehaviour
         }
     }
 
-    Vector2Int[] rotate(Vector2Int[] vec, int dir)
-    {
-        var dif = vec[1] - vec[0];
-        vec[0] = vec[1] + new Vector2Int { x = Math.Sign(dir)* dif.y, y = dif.x };
-
-        dif = vec[1] - vec[2];
-        vec[2] = vec[1] + new Vector2Int { x = Math.Sign(dir) * dif.y, y = dif.x };
-
-        dif = vec[1] - vec[3];
-        vec[3] = vec[1] + new Vector2Int { x = Math.Sign(dir) * dif.y, y = dif.x };
-        return vec;
-    }
-
     Field[] calcPosRotatedLeft(Field[] startPos)
     {
         var vec = startPos.Select(field => new Vector2Int { x = field.x, y = field.y }).ToArray();
-        vec = rotate(vec, -1);
+        var dif = vec[1] - vec[0];
+        vec[0] = vec[1] + new Vector2Int { x = dif.y, y = -1 * dif.x };
+
+        dif = vec[1] - vec[2];
+        vec[2] = vec[1] + new Vector2Int { x = dif.y, y = -1 * dif.x };
+
+        dif = vec[1] - vec[3];
+        vec[3] = vec[1] + new Vector2Int { x = dif.y, y = -1 * dif.x };
         return vec.Select(field => new Field { x = field.x, y = field.y }).ToArray(); ;
     }
     Field[] calcPosRotatedRight(Field[] startPos)
     {
         var vec = startPos.Select(field => new Vector2Int { x = field.x, y = field.y }).ToArray();
-        vec = rotate(vec, 1);
+        var dif = vec[1] - vec[0];
+        vec[0] = vec[1] + new Vector2Int { x = -1 * dif.y, y = dif.x };
+
+        dif = vec[1] - vec[2];
+        vec[2] = vec[1] + new Vector2Int { x = -1 * dif.y, y = dif.x };
+
+        dif = vec[1] - vec[3];
+        vec[3] = vec[1] + new Vector2Int { x = -1 * dif.y, y = dif.x };
         return vec.Select(field => new Field { x = field.x, y = field.y }).ToArray(); ;
     }
 
