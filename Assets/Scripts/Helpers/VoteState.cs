@@ -50,7 +50,7 @@ namespace Helpers
             {
                 votes.Add(value, new List<string>());
             }
-            votes[value].Add(reason);
+            votes[value].AddUnique(reason);
             Value = votes.OrderByDescending(o => o.Value.Count).First().Key;
         }
 
