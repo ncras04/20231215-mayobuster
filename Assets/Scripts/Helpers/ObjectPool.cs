@@ -9,6 +9,7 @@ namespace Helpers
         private T prefab { get; set; }
 
         private Stack<T> pool = new Stack<T>();
+        private List<T> active = new List<T>();
 
         public ObjectPool(T prefab, int initialSize)
         {
@@ -24,6 +25,15 @@ namespace Helpers
             }
         }
 
+        public void ForceReleaseAll()
+        {
+            T[] instances = active.ToArray();
+            foreach (T instance in instances)
+            {
+                Release(instance);
+            }
+        }
+
         public T Acquire()
         {
             T instance;
@@ -36,6 +46,7 @@ namespace Helpers
                 instance = GameObject.Instantiate(prefab);
             }
             instance.Acquire();
+            active.Add(instance);
             return instance;
         }
 
@@ -43,6 +54,7 @@ namespace Helpers
         {
             _instance.Reclaim();
             pool.Push(_instance);
+            active.Remove(_instance);
         }
     }
 }
