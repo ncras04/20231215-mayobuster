@@ -108,7 +108,6 @@ public class AudioManager : MonoBehaviour
 
     private void ClearPoolOnSceneLoad(Scene _old, Scene _new)
     {
-        Debug.Log("Clear");
         m_pool.Clear();
     }
 
