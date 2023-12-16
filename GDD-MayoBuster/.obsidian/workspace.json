@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5aaaf4ddc1f14823",
+            "id": "8f78d450a9ed6c7e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -143,35 +143,41 @@
       "canvas:Neuen Canvas erstellen": false,
       "daily-notes:Heutige Notiz öffnen": false,
       "templates:Vorlage einfügen": false,
-      "command-palette:Befehlspalette öffnen": false
+      "command-palette:Befehlspalette öffnen": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c1cb5724941bfa85",
+  "active": "8f78d450a9ed6c7e",
   "lastOpenFiles": [
-    "References/Controls.jpg",
-    "References/Happy Face - Concept.jpg",
+    "Whiteboard/VisualisationGameConcept.jpg",
+    "Whiteboard/GameProgrammerAufgabenverteilung.jpg",
+    "References/Soundanzeige.jpg",
+    "Excalidraw/Controls.jpg",
+    "Excalidraw",
+    "Controls_Picture.jpg",
+    "Controls_Overview.md",
+    "Controls.md",
+    "Overview.md",
+    "Assets.md",
+    "Whiteboard/2023-12-15_0001_2.jpg",
     "References/POW-Effect.jpg",
     "References/Nutrition Info for Kewpie Mayo.png",
     "References/Mayo.jpg",
-    "Assets.md",
-    "References/Mayo.jpg.crdownload",
-    "Visuals.md",
-    "Overview.md",
-    "Whiteboard/2023-12-15_0001_1.jpg",
+    "References/Kewpie Mayonaise.jpg",
     "References/Cat-Paws.jpg",
+    "Mechanics.md",
+    "References/Soundanzeige.jpg.~tmp",
+    "References/Soundanzeige.jpg.crdownload",
+    "Visuals.md",
+    "Excalidraw/Drawing 2023-12-15 23.32.16.excalidraw.md",
+    "Excalidraw/Unbenannt.md",
+    "References/Mayo.jpg.crdownload",
     "References/Cat-Paws.jpg.crdownload",
     "References/POW-Effect.jpg.crdownload",
-    "References/Kewpie Mayonaise.jpg",
-    "References/Happy Face - Zundamon.jpg",
-    "Controls.md",
-    "Whiteboard/2023-12-15_0001_2.jpg",
-    "Mechanics.md",
     "References/Kewpie Mayonaise.jpg.crdownload",
     "Whiteboard",
     "Neuer Ordner",
     "References/Zundamon.jpg.crdownload",
-    "References/8b2ea1f10b561b9767256765e2c0f7a9.jpg.crdownload",
-    "References.md",
-    "References"
+    "References.md"
   ]
 }
