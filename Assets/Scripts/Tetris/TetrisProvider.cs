@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
+using GameState;
 
 namespace Tetris
 {
@@ -152,6 +153,7 @@ namespace Tetris
                     if (board[field.x, field.y] != 0)
                     {
                         TetrisGameOver = true;
+                        Config.CurrentState.Vote(EGameState.GAME_OVER, "Lost at tetris.");
                     }
                     if (!TetrisGameOver)
                     {
