@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 22.114397, y: 6.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &7658716776303328574
@@ -131,11 +131,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spriteRenderer: {fileID: 8457204425429439593}
   m_catPawnSprites:
-  - {fileID: 21300000, guid: 054efbe187e2a194f808ad41b7354e4b, type: 3}
-  - {fileID: 21300000, guid: 2b6c55f16d2d1f147bf015cff3ad2de1, type: 3}
-  - {fileID: 21300000, guid: 3359569bd64e88a4d84a4dba00d8526b, type: 3}
-  - {fileID: 21300000, guid: 61aaa664747f0fb418ca7eab2408623d, type: 3}
+  - {fileID: 21300000, guid: b2e08367f49883e45bbcefc1964ca254, type: 3}
   - {fileID: 21300000, guid: dbd6246ee9701a345b095a5c07864c0c, type: 3}
+  - {fileID: 21300000, guid: 0b02fdceec3a83b46a2bcf12086803df, type: 3}
+  - {fileID: 21300000, guid: 8c943837d50050c4db1d7f90a3002efa, type: 3}
+  - {fileID: 21300000, guid: 4e988a4fa8af0e144b738495eea4b864, type: 3}
   m_sfxRequestCollection: {fileID: 11400000, guid: 6667cf6279d5ad14dbc3091bb9cd7e53,
     type: 2}
   m_hitEvent: {fileID: 11400000, guid: ac4453ea62c15b04f940ab6915b5d282, type: 2}

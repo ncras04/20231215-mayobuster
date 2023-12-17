@@ -1218,19 +1218,19 @@ MonoBehaviour:
   provider: {fileID: 1088352857}
   sprites:
   - character: 73
-    sprite: {fileID: 21300000, guid: 42d76f412d7d9a144b6ba0a74d9e1f34, type: 3}
+    sprite: {fileID: 21300000, guid: db05ad3f545510f4ea7203171529ad4a, type: 3}
   - character: 74
-    sprite: {fileID: 21300000, guid: f0d2c34dda190664089ce948d5d6d7fc, type: 3}
+    sprite: {fileID: 21300000, guid: 1ec0b3f0aa2ab2a4491331f909151641, type: 3}
   - character: 76
-    sprite: {fileID: 21300000, guid: 6633b6d9d9a2bba47b9c62e52dcfa325, type: 3}
+    sprite: {fileID: 21300000, guid: 08b6ba1eda51c8a4cb1db15f715f805c, type: 3}
   - character: 79
-    sprite: {fileID: 21300000, guid: 062a6a3ba6e79304788aa1bf9a772b5c, type: 3}
+    sprite: {fileID: 21300000, guid: 47271571953c7f440a85df2755192f4c, type: 3}
   - character: 83
-    sprite: {fileID: 21300000, guid: f46c8282f6dc75642b75f2589bb3ce66, type: 3}
+    sprite: {fileID: 21300000, guid: d0d4c2e3ccbb26c4cba70d38a4d0cf4b, type: 3}
   - character: 90
-    sprite: {fileID: 21300000, guid: 43c0458bb289de647863b7fc3fa13f40, type: 3}
+    sprite: {fileID: 21300000, guid: 1f96d9e04b3e3bd45bb4b40ab390d8d1, type: 3}
   - character: 84
-    sprite: {fileID: 21300000, guid: 599c2dcaed6aeb64a86cadbeb487c246, type: 3}
+    sprite: {fileID: 21300000, guid: cde418418ec0e4c4287f4bd77bef84c4, type: 3}
   canvas: {fileID: 1390783150}
   imagePrefab: {fileID: 2107808090669076796, guid: d5e9a41cd4a3d1544aa9023bc54b0c7e,
     type: 3}
@@ -1589,7 +1589,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: c03090e5425f7d146862a23d5ba54f9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a5b923bc06003642b140c0cf94b1470, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1746,15 +1746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10df65b13db4898429429ce2b0f8f4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnLocation: {fileID: 2998079362974949504}
-  PlaylLocation: {fileID: 3832367142434776176}
-  RemovelLocation: {fileID: 9168966693119089786}
   BowlPrefab: {fileID: 5253901476991533183, guid: 128277bc0c825744b9d7ae47933ea674,
     type: 3}
-  BowlSettings: {fileID: 11400000, guid: fb5c42d74b4c9474ba9356d74b0819e2, type: 2}
-  NewBowlReady:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!33 &1666546656830954970
 MeshFilter:
   m_ObjectHideFlags: 0
