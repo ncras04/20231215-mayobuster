@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344a5665812f48b4ab47014b2ef25be9, type: 3}
+  m_Name: Pooped
+  m_EditorClassIdentifier: 
+  m_volume: 1
+  m_clips:
+  - {fileID: 8300000, guid: 047298255aff0e8458c388232bda4452, type: 3}
+  - {fileID: 8300000, guid: 2f282776413be6c4e8845b470b4a4c51, type: 3}
+  - {fileID: 8300000, guid: 5541e84fa98d8354ab8f5dfd1af8aebb, type: 3}
+  - {fileID: 8300000, guid: 82a938ff356cb84439645b7c4826e76c, type: 3}
+  - {fileID: 8300000, guid: 98cf4f4b815192444b78e11f737335df, type: 3}
+  m_isPitchAffected: 0

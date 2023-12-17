@@ -2,10 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Audio;
 
 public class BeatChecker : MonoBehaviour
 {
     private MiusicPlayer m_player;
+
+    [SerializeField]
+    SoundFXRequestCollection m_collection;
+
+    [SerializeField]
+    AudioEvent m_sound;
 
     [SerializeField]
     Transform m_bottlePos;
@@ -20,7 +27,7 @@ public class BeatChecker : MonoBehaviour
     private int m_lastMaximum;
     private int m_currentMaximum;
 
-
+    
 
 
     private void OnEnable()
@@ -52,6 +59,7 @@ public class BeatChecker : MonoBehaviour
         }
         else
         {
+            m_collection.Add(AudioSFX.Request(m_sound));
             GotBeatPoint.Invoke(false);
         }
     }
