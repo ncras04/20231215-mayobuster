@@ -11,7 +11,7 @@ public class SmoothFollowFace : MonoBehaviour
     private Transform m_bottle;
 
     [SerializeField]
-    private Image m_face;
+    private MeshRenderer m_face;
 
     [SerializeField]
     private Animation m_anim;
@@ -24,7 +24,7 @@ public class SmoothFollowFace : MonoBehaviour
     private Vector3 m_offset = Vector3.zero;
 
     private Vector3 m_velocity = Vector3.zero;
-    private float m_smooth = 0.4f;
+    private float m_smooth = 0.2f;
 
     private MiusicPlayer m_player;
     private int beat;
@@ -36,7 +36,7 @@ public class SmoothFollowFace : MonoBehaviour
 
         m_player.BeatDropped += OnBeatDropped;
 
-        m_face.sprite = m_sprites[m_currentSprite];
+        m_face.material.mainTexture = m_sprites[m_currentSprite].texture;
     }
 
     private void LateUpdate()
@@ -50,7 +50,7 @@ public class SmoothFollowFace : MonoBehaviour
 
         if(beat % 4 == 0)
         {
-            m_face.sprite = m_sprites[RandomFace()];
+            m_face.material.mainTexture = m_sprites[RandomFace()].texture;
         }
     }
 
