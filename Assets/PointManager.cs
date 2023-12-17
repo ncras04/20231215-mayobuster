@@ -1,3 +1,4 @@
+using GameState;
 using QuickTime;
 using System;
 using System.Collections;
@@ -41,14 +42,22 @@ public class PointManager : MonoBehaviour
     private int m_knobPoints = 50;
     private bool m_beatPoints = false;
 
+    private bool m_noMorePoints = false;
+
 
     private void OnEnable()
     {
         FindObjectOfType<RightKnobTemperature>().IsMultiplyChanged += OnRightKnobMultiplyChanged;
+        FindObjectOfType<GameManager>().OnGameOver += OnGameOver;
         FindObjectOfType<QuickTimeHandler>().OnQuickTimeEventFinished += OnQuickTimeFinished;
         FindObjectOfType<BowlManager>().OnBowlFinish.AddListener(OnBowlFinished);
         FindObjectOfType<TetrisProvider>().OnFullLine += OnFullLine;
         FindObjectOfType<BeatChecker>().GotBeatPoint += OnBeatPoint;
+    }
+
+    private void OnGameOver()
+    {
+        m_noMorePoints = true;
     }
 
     private void OnBeatPoint(bool obj)
@@ -80,7 +89,7 @@ public class PointManager : MonoBehaviour
         var pawEvent = _event is CatPawnEvent;
 
         if (pawEvent)
-            Points += _event.GetHashCode();
+            Points += 100000;
     }
 
     private void OnRightKnobMultiplyChanged(bool _obj)
@@ -90,8 +99,12 @@ public class PointManager : MonoBehaviour
 
     void Update()
     {
-        m_deltaAccumulator = (int)(Time.deltaTime * 1000f);
+        if (m_noMorePoints)
+            return;
 
-        Points += m_deltaAccumulator + ((Convert.ToInt32(m_beatPoints) * m_basePoints ) + (Convert.ToInt32(m_rightKnob) * m_knobPoints));
+        m_deltaAccumulator = (int)(Time.deltaTime * 10f);
+
+
+        Points += m_deltaAccumulator + ((Convert.ToInt32(m_beatPoints) * m_basePoints) + (Convert.ToInt32(m_rightKnob) * m_knobPoints));
     }
 }

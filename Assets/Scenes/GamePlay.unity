@@ -477,6 +477,11 @@ PrefabInstance:
       propertyPath: ThermoManager
       value: 
       objectReference: {fileID: 1561251001}
+    - target: {fileID: 723571845737423601, guid: 18ec44d2a1d2c074c97387a262735b73,
+        type: 3}
+      propertyPath: MouseSenibility
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3039473376082244288, guid: 18ec44d2a1d2c074c97387a262735b73,
         type: 3}
       propertyPath: m_Name
@@ -1046,10 +1051,10 @@ RectTransform:
   - {fileID: 1905933388}
   m_Father: {fileID: 31707608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.38253802, y: 0.21544251}
-  m_AnchorMax: {x: 0.6186959, y: 0.270152}
-  m_AnchoredPosition: {x: -0.5, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.34879532}
+  m_AnchorMax: {x: 0.5, y: 0.34879532}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 346, y: 103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483570468
 MonoBehaviour:
@@ -1140,8 +1145,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: cf8b55fd4901b4546a027e6021f7f300, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2718,11 +2723,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 31707608}
   - {fileID: 879427192}
   - {fileID: 1430741341}
   - {fileID: 1462277638}
   - {fileID: 1184753209}
+  - {fileID: 31707608}
   - {fileID: 1614201032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3041,7 +3046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3f1dd605d3e93324bb9be3a774c181bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cda4304d2fca5d14eb8baa29f186026d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3196,7 +3201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1905933388
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3738,11 +3743,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeatChecker
       objectReference: {fileID: 0}
+    - target: {fileID: 3428127680647906332, guid: 11b389a03bf600a48ab532612be012f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3714481416116260872, guid: 11b389a03bf600a48ab532612be012f5,
         type: 3}
       propertyPath: m_bottlePos
       value: 
       objectReference: {fileID: 286959403}
+    - target: {fileID: 6036126596516027496, guid: 11b389a03bf600a48ab532612be012f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

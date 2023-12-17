@@ -61,6 +61,7 @@ public class BeatChecker : MonoBehaviour
         {
             m_collection.Add(AudioSFX.Request(m_sound));
             GotBeatPoint.Invoke(false);
+
         }
     }
 }
