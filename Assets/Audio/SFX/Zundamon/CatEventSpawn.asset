@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_volume: 1
   m_clips:
-  - {fileID: 8300000, guid: 85f2c6dcab6478542a9411d0d6815240, type: 3}
-  - {fileID: 8300000, guid: ed686209c2864de4eb09f2b90ec87661, type: 3}
-  - {fileID: 8300000, guid: d4306d81ea0a5d749a0683e0b54971f4, type: 3}
-  - {fileID: 8300000, guid: c50eb97b2de42f94eaf7bc2b1564e6c6, type: 3}
-  - {fileID: 8300000, guid: 8720bd20d1fa0ba4daba401c9b2723b7, type: 3}
+  - {fileID: 8300000, guid: 3599963fd9625d448b3174ecd4bd0232, type: 3}
+  - {fileID: 8300000, guid: a0d4df4da0f50ab419c5c3f4dda5f7e5, type: 3}
+  - {fileID: 8300000, guid: b07bd3c46a9ce354c91532462056facd, type: 3}
+  - {fileID: 8300000, guid: 144a269fcb2f20647968b029093b42e0, type: 3}
+  - {fileID: 8300000, guid: 8bad1a288b323b94b8273ff432317cb1, type: 3}
+  - {fileID: 8300000, guid: c4f2db464dace6e41937ecba897b0f04, type: 3}
+  - {fileID: 8300000, guid: 02507fd9ab768e547b36b473845b532a, type: 3}
+  - {fileID: 8300000, guid: fc4eb8c9017e00f49bc8cdaaec1e3a7e, type: 3}
+  - {fileID: 8300000, guid: c8980b13693904544b255dd594ced747, type: 3}
+  - {fileID: 8300000, guid: 0c3388c7a2e090a448b2dc022edebc7a, type: 3}
   m_isPitchAffected: 0

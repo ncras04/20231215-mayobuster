@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 344a5665812f48b4ab47014b2ef25be9, type: 3}
-  m_Name: CatEventDead
+  m_Name: FullLine
   m_EditorClassIdentifier: 
   m_volume: 1
   m_clips:
@@ -18,8 +18,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d5b6472deeba1584d9a663a3b680ac3e, type: 3}
   - {fileID: 8300000, guid: 27d9fadb12448f84fbc7d85d67c6ce5a, type: 3}
   - {fileID: 8300000, guid: 620530c9017aa1a4eabf72b2efbd9767, type: 3}
-  - {fileID: 8300000, guid: 6efb86ae87c6d564695fdec4f3c91e7e, type: 3}
-  - {fileID: 8300000, guid: 5d058d88111123d4db99d2444c88bc70, type: 3}
-  - {fileID: 8300000, guid: c1ced954bbafa564188bffe080cb97bf, type: 3}
-  - {fileID: 8300000, guid: 2ed1f62ac98cf9d459c52df9920db0c3, type: 3}
   m_isPitchAffected: 0

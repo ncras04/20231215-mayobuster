@@ -21,6 +21,19 @@ namespace Tetris
             }
         }
 
+        public event System.Action OnFullLine
+        {
+            add
+            {
+                onFullLine -= value;
+                onFullLine += value;
+            }
+            remove
+            {
+                onFullLine -= value;
+            }
+        }
+
         public int Width => width;
         public int Height => height;
 
@@ -44,7 +57,7 @@ namespace Tetris
         private char[,] board;
 
         private event System.Action<char[,]> onBoardUpdated;
-
+        private event System.Action onFullLine;
         TetrisProvider()
         {
             board = new char[width, height];
@@ -281,6 +294,7 @@ namespace Tetris
 
         void removeFullLines()
         {
+            bool removedLine = false;
             for (int y = 0; y < height; y++)
             {
                 var row = Enumerable.Range(0, board.GetLength(0))
@@ -288,6 +302,7 @@ namespace Tetris
                     .ToArray();
                 if (row.All(c => c != 0))
                 {
+                    removedLine = true;
                     for (int i = y; i > 0; i--)
                     {
                         for (int x = 0; x < width; x++)
@@ -297,6 +312,9 @@ namespace Tetris
                     }
                 }
             }
+
+            if (removedLine)
+                onFullLine?.Invoke();
         }
 
 

@@ -15,8 +15,10 @@ MonoBehaviour:
   m_volume: 1
   m_clips:
   - {fileID: 8300000, guid: 1311bdead6cd95749afaff80b0759f24, type: 3}
-  - {fileID: 8300000, guid: fb63b891bb0f02c4d90e91a7f2aacaa5, type: 3}
-  - {fileID: 8300000, guid: ffa12c7248047c649b0d9151330ec3ff, type: 3}
-  - {fileID: 8300000, guid: 83d9711b3f319da4eb663c472b4d7b20, type: 3}
-  - {fileID: 8300000, guid: 3d9eda1ae69b9654faa59f6f1e9e30ee, type: 3}
+  - {fileID: 8300000, guid: 9d2fb559947c15b499397aafa8b8a713, type: 3}
+  - {fileID: 8300000, guid: 1b044ea6a718b2249aedb3946e040494, type: 3}
+  - {fileID: 8300000, guid: 26bd183895ff86c44b74f5bb1878a3d5, type: 3}
+  - {fileID: 8300000, guid: f573bf84e7005d04b9349fdc6b39b207, type: 3}
+  - {fileID: 8300000, guid: 8616a5b35718d3e4da126ca9b016bfdf, type: 3}
+  - {fileID: 8300000, guid: 8454dd2a6533dd74fa47413de12004f3, type: 3}
   m_isPitchAffected: 0

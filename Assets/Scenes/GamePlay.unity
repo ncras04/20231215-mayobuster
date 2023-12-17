@@ -1234,6 +1234,9 @@ MonoBehaviour:
   canvas: {fileID: 1390783150}
   imagePrefab: {fileID: 2107808090669076796, guid: d5e9a41cd4a3d1544aa9023bc54b0c7e,
     type: 3}
+  sfxRequestCollection: {fileID: 11400000, guid: 6667cf6279d5ad14dbc3091bb9cd7e53,
+    type: 2}
+  fullLineEvent: {fileID: 11400000, guid: a9a1942fb305abe4baf2eb5f677a1c05, type: 2}
 --- !u!1 &1390783147
 GameObject:
   m_ObjectHideFlags: 0

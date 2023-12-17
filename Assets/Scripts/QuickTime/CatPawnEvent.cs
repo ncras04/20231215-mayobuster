@@ -45,6 +45,8 @@ namespace QuickTime
 
         private void LeftButtonPressed(InputAction.CallbackContext _context)
         {
+            if (m_isDead)
+                return;
             if (!m_isLeft)
                 return;
 
@@ -54,6 +56,8 @@ namespace QuickTime
 
         private void RightButtonPressed(InputAction.CallbackContext _context)
         {
+            if (m_isDead)
+                return;
             if (m_isLeft)
                 return;
 

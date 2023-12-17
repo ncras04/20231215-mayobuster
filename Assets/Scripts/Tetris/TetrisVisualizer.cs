@@ -1,3 +1,4 @@
+using Audio;
 using Helpers;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,10 @@ namespace Tetris
         private Canvas canvas = null;
         [SerializeField]
         private TetrisImage imagePrefab = null;
+        [SerializeField]
+        private SoundFXRequestCollection sfxRequestCollection = null;
+        [SerializeField]
+        private AudioEvent fullLineEvent = null;
 
         private Dictionary<char, Sprite> charToSprite = new Dictionary<char, Sprite>();
         private ObjectPool<TetrisImage> imagePool = null;
@@ -67,6 +72,12 @@ namespace Tetris
             SetSpriteSize();
 
             provider.OnBoardUpdated += VisualizeBoardState;
+            provider.OnFullLine += PlayRemoveLineSFX;
+        }
+
+        private void PlayRemoveLineSFX()
+        {
+            sfxRequestCollection.Add(AudioSFX.Request(fullLineEvent));
         }
 
         private void SetSpriteSize()
