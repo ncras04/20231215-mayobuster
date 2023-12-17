@@ -42,10 +42,10 @@ namespace Tetris
         private bool debugVisualize = false;
 
         [SerializeField]
-        private int width = 16;
+        private int width = 8;
 
         [SerializeField]
-        private int height = 12;
+        private int height = 6;
 
         [SerializeField]
         private float tickTime = 0.2f;
@@ -59,10 +59,7 @@ namespace Tetris
 
         private event System.Action<char[,]> onBoardUpdated;
         private event System.Action onFullLine;
-        TetrisProvider()
-        {
-            board = new char[width, height];
-        }
+       
 
         struct Direction
         {
@@ -91,6 +88,7 @@ namespace Tetris
 
         private void Awake()
         {
+            board = new char[width, height];
             gameManager.OnStartGame += () => isRunning = true;
             gameManager.OnGameOver += () => isRunning = false;
         }
