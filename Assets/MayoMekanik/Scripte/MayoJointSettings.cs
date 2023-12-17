@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MayoJointSettings", menuName = "ScriptableObjects/MayoJointSettings", order = 1)]
 public class MayoJointSettings : ScriptableObject
 {
-    [SerializeField] public float xAngleLimit;
-    [SerializeField] public float yAngleLimit;
-    [SerializeField] public float zAngleLimit;
+    public float xAngleLimit;
+    public float yAngleLimit;
+    public float zAngleLimit;
+    public float BreakForce = 5.0f;
 }

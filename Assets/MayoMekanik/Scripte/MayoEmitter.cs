@@ -7,16 +7,14 @@ public class MayoEmitter : MonoBehaviour
     private GameObject LastMayoObject;
     private IEnumerator StartSpawn;
 
-    [SerializeField] public GameObject MayoPrefab;
-    [SerializeField] public MayoJointSettings MayoSettings;
+    public GameObject MayoPrefab;
+    public MayoJointSettings MayoSettings;
 
-    // Start is called before the first frame update
     void Start()
     {
         StartSpawn = Spawn();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -43,9 +41,6 @@ public class MayoEmitter : MonoBehaviour
                 Vector3 Scale = LastMayoObject.transform.localScale;
                 Vector3 ScaledBounds = new Vector3(RawBounds.x * Scale.x, RawBounds.y * Scale.y, RawBounds.z * Scale.z);
                 ScaledBounds = new Vector3(0, ScaledBounds.y * 2.0f, 0);
-               //SpawnTrans = LastMayoObject.transform;
-               //SpawnTrans.position += LastMayoObject.transform.up * ScaledBounds.y;
-                Debug.Log("Up:" + LastMayoObject.transform.up * ScaledBounds.y + " | Bounds: " + ScaledBounds + " | Raw: " + RawBounds);
             }
 
             GameObject Obj = Instantiate(MayoPrefab, SpawnTrans.position, SpawnTrans.rotation);
@@ -82,8 +77,8 @@ public class MayoEmitter : MonoBehaviour
         Joint.angularYLimit = LimitY;
         Joint.angularZLimit = LimitZ;
 
-        Joint.connectedBody = Obj.GetComponent<Rigidbody>();
+        Joint.breakForce = MayoSettings.BreakForce;
 
-        //Debug.Log(Joint.connectedAnchor);
+        Joint.connectedBody = Obj.GetComponent<Rigidbody>();
     }
 }
