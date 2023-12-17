@@ -21,7 +21,10 @@ public class MayoEmitter : MonoBehaviour
     void Start()
     {
         StartSpawn = Spawn();
-        ThermoManager.TemperatureChanged += UpdateThermo;
+        if (ThermoManager)
+        {
+            ThermoManager.TemperatureChanged += UpdateThermo;
+        }
     }
 
     void Update()
