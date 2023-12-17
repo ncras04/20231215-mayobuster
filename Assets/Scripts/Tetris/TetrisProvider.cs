@@ -153,8 +153,8 @@ namespace Tetris
             Vector2 axis = _context.ReadValue<Vector2>();
             leftPressed = Mathf.Approximately(-1.0f, axis.x);
             rightPressed = Mathf.Approximately(1.0f, axis.x);
-            upPressed = Mathf.Approximately(1.0f, axis.y);
-            downPressed = Mathf.Approximately(-1.0f, axis.y);
+            upPressed = Mathf.Approximately(-1.0f, axis.y);
+            downPressed = Mathf.Approximately(1.0f, axis.y);
         }
 
         void onTick()
