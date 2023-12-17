@@ -8,6 +8,7 @@ public class BowlManager : MonoBehaviour
     [SerializeField] private GameObject BowlPrefab;
 
     public UnityEvent<Bowl> OnBowlReady;
+    public UnityEvent<Bowl> OnBowlFinish;
 
     private Bowl CurrentBowl;
     private Bowl OldBowl;
@@ -34,6 +35,7 @@ public class BowlManager : MonoBehaviour
     {
         if (CurrentBowl != null)
         {
+            OnBowlFinish.Invoke(CurrentBowl);
             OldBowl = CurrentBowl;
             OldBowl.OnFillBowl.RemoveAllListeners();
             OldBowl.OnBowlReady.RemoveAllListeners();
