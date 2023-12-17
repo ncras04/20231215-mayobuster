@@ -18,13 +18,22 @@ public class BeatAnimations : MonoBehaviour
     [Range(-1, 1)]
     private float m_sizeValue;
 
-    void Start()
+    private void OnEnable()
     {
         if (m_player is null)
             m_player = FindObjectOfType<MiusicPlayer>();
 
         m_player.TrackStarted += OnTrackStarted;
         m_player.BeatDropped += OnBeatDropped;
+    }
+
+    private void OnDisable()
+    {
+        m_player.TrackStarted -= OnTrackStarted;
+        m_player.BeatDropped -= OnBeatDropped;
+    }
+    void Start()
+    {
         m_scale = transform.localScale;
     }
 

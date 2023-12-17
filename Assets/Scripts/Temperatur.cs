@@ -16,10 +16,16 @@ public class Temperatur : MonoBehaviour
     [SerializeField]
     private RightKnobTemperature m_thermoManager;
 
-    void Start()
+    void OnEnable()
     {
         m_thermoManager.TemperatureChanged += OnTemperatureChanged;
         m_thermoManager.IsMultiplyChanged += OnMultiplyChanged;
+    }
+
+    private void OnDisable()
+    {
+        m_thermoManager.TemperatureChanged -= OnTemperatureChanged;
+        m_thermoManager.IsMultiplyChanged -= OnMultiplyChanged;
     }
 
     private void OnMultiplyChanged(bool _obj)
