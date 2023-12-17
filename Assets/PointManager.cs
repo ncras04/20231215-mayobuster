@@ -31,14 +31,14 @@ public class PointManager : MonoBehaviour
     private BigInteger m_points = 0;
 
     [SerializeField]
-    private int m_basePoints = 0;
+    private int m_basePoints = 100;
     [SerializeField]
     private int baseMultiplier = 1000;
 
     private int m_deltaAccumulator = 0;
 
     private bool m_rightKnob = false;
-    private int m_knobPoints = 200;
+    private int m_knobPoints = 50;
 
     private void OnEnable()
     {
@@ -71,7 +71,7 @@ public class PointManager : MonoBehaviour
         var pawEvent = _event is CatPawnEvent;
 
         if (pawEvent)
-            Points += pawEvent.GetHashCode();
+            Points += _event.GetHashCode();
     }
 
     private void OnRightKnobMultiplyChanged(bool _obj)
@@ -83,6 +83,6 @@ public class PointManager : MonoBehaviour
     {
         m_deltaAccumulator = (int)(Time.deltaTime * 1000f);
 
-        Points += m_deltaAccumulator * (Convert.ToInt32(m_rightKnob) * m_knobPoints);
+        Points += m_deltaAccumulator + m_basePoints * (Convert.ToInt32(m_rightKnob) * m_knobPoints);
     }
 }
