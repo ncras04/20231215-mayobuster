@@ -9,7 +9,7 @@ public class BowlTrigger : MonoBehaviour
 
     private void Awake()
     {
-        ParentBowl = transform.parent.GetComponent<Bowl>();
+        ParentBowl = transform.parent.parent.GetComponent<Bowl>();
     }
 
     private void OnTriggerEnter(Collider other)
