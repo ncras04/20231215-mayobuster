@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 344a5665812f48b4ab47014b2ef25be9, type: 3}
-  m_Name: Peng
+  m_Name: CatWins
   m_EditorClassIdentifier: 
-  m_volume: 0.7
+  m_volume: 1
   m_clips:
-  - {fileID: 8300000, guid: e8e517aac4aadc941b7fb22b193ec5bd, type: 3}
-  m_isPitchAffected: 1
+  - {fileID: 8300000, guid: b229153b4ecf04b438f5c10e9f25211d, type: 3}
+  - {fileID: 8300000, guid: 7c11b7384832c1b4aba8b8b3fe5d2125, type: 3}
+  m_isPitchAffected: 0
