@@ -6,6 +6,4 @@ using UnityEngine;
 public class BowlSettings : ScriptableObject
 {
     [SerializeField] public int MayoParticleAmountToFill = 30;
-    [SerializeField] public float BowlMoveInSpeed = 0.1f;
-    [SerializeField] public float BowlMoveOutSpeed = 0.1f;
 }

@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Bowl : MonoBehaviour
+public class BowlTrigger : MonoBehaviour
 {
     [SerializeField] private BowlSettings BowlSettings;
-    [SerializeField] public UnityEvent<Bowl> OnFillBowl;
-    private int ParticleAmount;
+    private Bowl ParentBowl;
+
+    private void Awake()
+    {
+        ParentBowl = transform.parent.GetComponent<Bowl>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("MayoParticle"))
         {
-            ParticleAmount++;
+            ParentBowl.ParticleAmount++;
             other.transform.SetParent(transform);
-            if(BowlSettings.MayoParticleAmountToFill == ParticleAmount)
+            if (BowlSettings.MayoParticleAmountToFill == ParentBowl.ParticleAmount)
             {
-                OnFillBowl.Invoke(this);
+                ParentBowl.OnFillBowl.Invoke(ParentBowl);
             }
         }
     }
