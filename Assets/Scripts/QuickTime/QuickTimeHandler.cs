@@ -9,6 +9,19 @@ namespace QuickTime
     [DisallowMultipleComponent]
     public class QuickTimeHandler : MonoBehaviour
     {
+        public event System.Action<AQuickTimeEvent> OnQuickTimeEventFinished
+        {
+            add
+            {
+                m_onQuickTimeEventFinished -= value;
+                m_onQuickTimeEventFinished += value;
+            }
+            remove
+            {
+                m_onQuickTimeEventFinished -= value;
+            }
+        }
+
         [SerializeField]
         private Vector2 m_quickTimeInterval = Vector2.zero;
         [SerializeField]
@@ -19,6 +32,8 @@ namespace QuickTime
         private AQuickTimeEvent m_currentEvent = null;
         private float m_timeLeft = 0.0f;
         private bool m_isPlaying = false;
+
+        private event System.Action<AQuickTimeEvent> m_onQuickTimeEventFinished;
 
         private void Awake()
         {
@@ -50,6 +65,7 @@ namespace QuickTime
             {
                 if (m_currentEvent.UpdateEvent())
                 {
+                    m_onQuickTimeEventFinished?.Invoke(m_currentEvent);
                     m_currentEvent.Deinitialize();
                     m_currentEvent = null;
                 }

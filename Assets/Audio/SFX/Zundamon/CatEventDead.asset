@@ -22,4 +22,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5d058d88111123d4db99d2444c88bc70, type: 3}
   - {fileID: 8300000, guid: c1ced954bbafa564188bffe080cb97bf, type: 3}
   - {fileID: 8300000, guid: 2ed1f62ac98cf9d459c52df9920db0c3, type: 3}
+  - {fileID: 8300000, guid: 2d2a074c5578c8349b6e06ef3f59720b, type: 3}
+  - {fileID: 8300000, guid: 90e07b77bb02acf46a1902639c50dfd0, type: 3}
   m_isPitchAffected: 0
