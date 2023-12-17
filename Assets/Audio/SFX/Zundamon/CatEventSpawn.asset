@@ -24,4 +24,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fc4eb8c9017e00f49bc8cdaaec1e3a7e, type: 3}
   - {fileID: 8300000, guid: c8980b13693904544b255dd594ced747, type: 3}
   - {fileID: 8300000, guid: 0c3388c7a2e090a448b2dc022edebc7a, type: 3}
+  - {fileID: 8300000, guid: 0c9fb99711bda1048bf86f1a50ff5ec4, type: 3}
+  - {fileID: 8300000, guid: 0932bf7f8fd29ce4da53f4f3d968b4d9, type: 3}
+  - {fileID: 8300000, guid: bca69b55cf7671e45b7824b256331322, type: 3}
+  - {fileID: 8300000, guid: d84fe465e78dbf14a97dd9e20de99629, type: 3}
+  - {fileID: 8300000, guid: f0262775cb023e34c9c21c2fb6c9509a, type: 3}
+  - {fileID: 8300000, guid: a2155bb5e0c38664aa25aa718a244ae7, type: 3}
+  - {fileID: 8300000, guid: 769a17e5aad9f874d8b610382deb0511, type: 3}
+  - {fileID: 8300000, guid: 15a47059fb136fc4b86e171118edac55, type: 3}
+  - {fileID: 8300000, guid: 44c1d8de1342a69479ee391d9dc0ab64, type: 3}
+  - {fileID: 8300000, guid: 2fa9059977c2bab46bb6c4a325d4ce62, type: 3}
   m_isPitchAffected: 0

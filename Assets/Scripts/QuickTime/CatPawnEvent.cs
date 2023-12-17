@@ -20,6 +20,8 @@ namespace QuickTime
         [SerializeField]
         private AudioEvent m_hitEvent = null;
         [SerializeField]
+        private AudioEvent m_pengEvent = null;
+        [SerializeField]
         private AudioEvent m_spawnEvent = null;
         [SerializeField]
         private Transform m_pawPivot = null;
@@ -51,6 +53,7 @@ namespace QuickTime
                 return;
 
             m_sfxRequestCollection.Add(AudioSFX.Request(m_hitEvent));
+            m_sfxRequestCollection.Add(AudioSFX.Request(m_pengEvent));
             m_isDead = true;
         }
 
@@ -62,6 +65,7 @@ namespace QuickTime
                 return;
 
             m_sfxRequestCollection.Add(AudioSFX.Request(m_hitEvent));
+            m_sfxRequestCollection.Add(AudioSFX.Request(m_pengEvent));
             m_isDead = true;
         }
 

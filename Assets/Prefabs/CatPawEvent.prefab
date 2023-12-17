@@ -139,6 +139,7 @@ MonoBehaviour:
   m_sfxRequestCollection: {fileID: 11400000, guid: 6667cf6279d5ad14dbc3091bb9cd7e53,
     type: 2}
   m_hitEvent: {fileID: 11400000, guid: ac4453ea62c15b04f940ab6915b5d282, type: 2}
+  m_pengEvent: {fileID: 11400000, guid: dcf3dcabc332add489de0dd1d409f920, type: 2}
   m_spawnEvent: {fileID: 11400000, guid: 58d708a3269f7c04985f2628808453c0, type: 2}
   m_pawPivot: {fileID: 2127355911874869477}
   m_movementSpeedRange: {x: 2, y: 5}
