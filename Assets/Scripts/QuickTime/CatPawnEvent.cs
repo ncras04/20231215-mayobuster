@@ -26,6 +26,10 @@ namespace QuickTime
         [SerializeField]
         private AudioEvent m_spawnEvent = null;
         [SerializeField]
+        private AudioEvent m_catSounds = null;
+        [SerializeField]
+        private AudioEvent m_catWinsEvent = null;
+        [SerializeField]
         private Transform m_pawPivot = null;
         [SerializeField]
         private Vector2 m_movementSpeedRange = new Vector2(2.0f, 5.0f);
@@ -87,6 +91,7 @@ namespace QuickTime
             m_spriteRenderer.sprite = m_catPawnSprites.Random();
             m_sfxRequestCollection.Add(AudioSFX.Request(m_spawnEvent));
             m_sfxRequestCollection.Add(AudioSFX.Request(m_reloadEvent));
+            m_sfxRequestCollection.Add(AudioSFX.Request(m_catSounds));
 
             m_isLeft = Random.Range(0, 2) == 0;
             if (m_isLeft)
@@ -117,6 +122,7 @@ namespace QuickTime
             Vector3 bowlOnScreen = m_camera.WorldToScreenPoint(m_bowl.transform.position);
             if (bowlOnScreen.x < 0 || bowlOnScreen.x > Screen.width)
             {
+                m_sfxRequestCollection.Add(AudioSFX.Request(m_catWinsEvent));
                 m_gameManager.EndGame();
             }
 
