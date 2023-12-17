@@ -39,6 +39,8 @@ public class PointManager : MonoBehaviour
 
     private bool m_rightKnob = false;
     private int m_knobPoints = 50;
+    private bool m_beatPoints = false;
+
 
     private void OnEnable()
     {
@@ -46,6 +48,12 @@ public class PointManager : MonoBehaviour
         FindObjectOfType<QuickTimeHandler>().OnQuickTimeEventFinished += OnQuickTimeFinished;
         FindObjectOfType<BowlManager>().OnBowlFinish.AddListener(OnBowlFinished);
         FindObjectOfType<TetrisProvider>().OnFullLine += OnFullLine;
+        FindObjectOfType<BeatChecker>().GotBeatPoint += OnBeatPoint;
+    }
+
+    private void OnBeatPoint(bool obj)
+    {
+        m_beatPoints = obj;
     }
 
     private void OnDisable()
@@ -54,6 +62,7 @@ public class PointManager : MonoBehaviour
         FindObjectOfType<QuickTimeHandler>().OnQuickTimeEventFinished -= OnQuickTimeFinished;
         FindObjectOfType<BowlManager>().OnBowlFinish.RemoveListener(OnBowlFinished);
         FindObjectOfType<TetrisProvider>().OnFullLine -= OnFullLine;
+        FindObjectOfType<BeatChecker>().GotBeatPoint -= OnBeatPoint;
     }
 
     private void OnFullLine()
@@ -83,6 +92,6 @@ public class PointManager : MonoBehaviour
     {
         m_deltaAccumulator = (int)(Time.deltaTime * 1000f);
 
-        Points += m_deltaAccumulator + m_basePoints * (Convert.ToInt32(m_rightKnob) * m_knobPoints);
+        Points += m_deltaAccumulator + ((Convert.ToInt32(m_beatPoints) * m_basePoints ) + (Convert.ToInt32(m_rightKnob) * m_knobPoints));
     }
 }
