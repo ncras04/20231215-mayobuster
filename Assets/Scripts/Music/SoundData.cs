@@ -35,7 +35,7 @@ public class SoundData : ScriptableObject
         var tmpArray = datastring.Split(',', StringSplitOptions.RemoveEmptyEntries)
                                     .Select(o => o.Trim(new char[] { '\r', '\n' }))
                                     .ToArray();
-           
+
         if (tmpArray.Length % 3 is not 0)
         {
             Debug.LogError("Data was not correctly formatted");
@@ -44,8 +44,7 @@ public class SoundData : ScriptableObject
 
         var dataSize = (int)(tmpArray.Length / 3);
 
-        if (m_sheetData is null)
-            m_sheetData = new int[dataSize, 3];
+        m_sheetData = new int[dataSize, 3];
 
         int value;
         int iterator = 0;

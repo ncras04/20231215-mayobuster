@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 700499886}
   - component: {fileID: 700499888}
   - component: {fileID: 700499889}
+  - component: {fileID: 700499890}
+  - component: {fileID: 700499891}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -266,6 +268,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_track: {fileID: 11400000, guid: 1e2010fb486834a4da5f4a629adaf0ee, type: 2}
   hd: {fileID: 1205191030}
+  m_gameManager: {fileID: 700499890}
+--- !u!114 &700499890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700499885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b610960bf393d56409311bda3ffab532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &700499891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700499885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3f5489ca71e1a4f92097f7cb27c7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gameManager: {fileID: 700499890}
 --- !u!1 &782368449
 GameObject:
   m_ObjectHideFlags: 0
