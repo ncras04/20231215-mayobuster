@@ -774,6 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b610960bf393d56409311bda3ffab532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_bowlManager: {fileID: 1183386344}
 --- !u!4 &540625635
 Transform:
   m_ObjectHideFlags: 0
@@ -1254,6 +1255,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c53b0aa86243a77468e6ffd4f2380fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1183386344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2892327148321718852, guid: eb7e14617f9d5134d814cb3845031dbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1995397163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10df65b13db4898429429ce2b0f8f4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1390783147

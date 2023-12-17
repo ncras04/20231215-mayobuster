@@ -30,16 +30,28 @@ namespace GameState
             }
         }
 
+        [SerializeField]
+        private BowlManager m_bowlManager = null;
+
         private event System.Action m_onStartGame;
         private event System.Action m_onGameOver;
 
+        private bool m_isRunning = false;
+
+        private void Awake()
+        {
+            m_bowlManager.OnBowlReady.AddListener((bowl) => { if (!m_isRunning) StartGame(); });
+        }
+
         public void StartGame()
         {
+            m_isRunning = true;
             m_onStartGame?.Invoke();
         }
 
         public void EndGame()
         {
+            m_isRunning = false;
             m_onGameOver?.Invoke();
         }
     }
