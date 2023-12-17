@@ -789,74 +789,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &634515289
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5253901476991533183, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_Name
-      value: Sprite
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.517
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172517442251827776, guid: 128277bc0c825744b9d7ae47933ea674,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 128277bc0c825744b9d7ae47933ea674, type: 3}
 --- !u!1 &692371182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1595,19 @@ MonoBehaviour:
     m_ActionId: 0ee69410-b282-42d0-88db-cfc76bd597d6
     m_ActionName: Inputs/KnobInput[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1088352857}
+        m_TargetAssemblyTypeName: Tetris.TetrisProvider, Assembly-CSharp
+        m_MethodName: OnQuickTimePressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 50a0796e-2280-488c-a6d6-bd16e223b150
     m_ActionName: Inputs/QuickTime[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
@@ -1964,7 +1908,6 @@ SceneRoots:
   - {fileID: 3617661334665255176}
   - {fileID: 1830875123832241706}
   - {fileID: 286959402}
-  - {fileID: 634515289}
   - {fileID: 510831675}
   - {fileID: 216037304}
   - {fileID: 692371184}

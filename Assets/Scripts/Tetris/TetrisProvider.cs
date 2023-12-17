@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
 using GameState;
+using UnityEngine.InputSystem;
 
 namespace Tetris
 {
@@ -83,6 +84,11 @@ namespace Tetris
         private float time = 0;
         private bool isRunning = false;
 
+        private bool upPressed = false;
+        private bool downPressed = false;
+        private bool leftPressed = false;
+        private bool rightPressed = false;
+
         private void Awake()
         {
             gameManager.OnStartGame += () => isRunning = true;
@@ -108,7 +114,7 @@ namespace Tetris
                 time = 0;
             }
 
-            if (Input.GetKeyDown("left"))
+            if (leftPressed)
             {
                 var left = new Direction { x = -1, y = 0 };
                 if (canMovePart(left))
@@ -116,8 +122,9 @@ namespace Tetris
                     movePart(left);
                     onBoardUpdated?.Invoke(board);
                 }
+                leftPressed = false;
             }
-            if (Input.GetKeyDown("right"))
+            if (rightPressed)
             {
                 var right = new Direction { x = 1, y = 0 };
                 if (canMovePart(right))
@@ -125,17 +132,29 @@ namespace Tetris
                     movePart(right);
                     onBoardUpdated?.Invoke(board);
                 }
+                rightPressed = false;  
             }
-            if (Input.GetKeyDown("up"))
+            if (upPressed)
             {
                 rotate(true);
                 onBoardUpdated?.Invoke(board);
+                upPressed = false;
             }
-            if (Input.GetKeyDown("down"))
+            if (downPressed)
             {
                 rotate(false);
                 onBoardUpdated?.Invoke(board);
+                downPressed = false;
             }
+        }
+
+        public void OnQuickTimePressed(InputAction.CallbackContext _context)
+        {
+            Vector2 axis = _context.ReadValue<Vector2>();
+            leftPressed = Mathf.Approximately(-1.0f, axis.x);
+            rightPressed = Mathf.Approximately(1.0f, axis.x);
+            upPressed = Mathf.Approximately(1.0f, axis.y);
+            downPressed = Mathf.Approximately(-1.0f, axis.y);
         }
 
         void onTick()
