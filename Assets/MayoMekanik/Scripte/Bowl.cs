@@ -10,6 +10,8 @@ public class Bowl : MonoBehaviour
     public int ParticleAmount;
     private Animator AnimationController;
 
+    public UnityEvent<Bowl> OnBowlReady;
+
     private void Awake()
     {
         AnimationController = GetComponentInChildren<Animator>();
