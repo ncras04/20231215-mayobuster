@@ -8,6 +8,7 @@ namespace Music
     {
         [SerializeField]
         private SpriteRenderer m_renderer = null;
+
         public void Acquire()
         {
             m_renderer.enabled = true;
@@ -18,16 +19,9 @@ namespace Music
             m_renderer.enabled = false;
         }
 
-        // Start is called before the first frame update
-        void Start()
+        public void SetSide(bool _isLeft)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            m_renderer.flipX = _isLeft;
         }
     }
 

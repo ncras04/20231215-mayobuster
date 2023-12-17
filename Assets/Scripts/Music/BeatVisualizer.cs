@@ -29,6 +29,8 @@ namespace Music
         private GameManager m_gameManager = null;
         [SerializeField]
         private AudioSource m_source = null;
+        [SerializeField]
+        private float m_centerOffset = 0.0f;
 
         private Dictionary<VisualBeat, float> m_leftBeatInstances = new Dictionary<VisualBeat, float>();
         private Dictionary<VisualBeat, float> m_rightBeatInstances = new Dictionary<VisualBeat, float>();
@@ -52,6 +54,7 @@ namespace Music
 
         private void Awake()
         {
+            m_movementSpeed = Config.LineSpeed;
             m_beatPool = new ObjectPool<VisualBeat>(m_beatPrefab, 0);
 
             m_player.BeatDropped += BeatDropper;
@@ -125,7 +128,7 @@ namespace Music
             foreach (VisualBeat beat in m_leftBeatInstances.Keys.ToArray())
             {
                 m_leftBeatInstances[beat] = m_leftBeatInstances[beat] + Time.deltaTime;
-                beat.transform.position = Vector3.Lerp(m_leftSpawnPoint.position, m_center, m_leftBeatInstances[beat] / m_timeToCenter);
+                beat.transform.position = Vector3.Lerp(m_leftSpawnPoint.position, m_center - m_centerOffset * m_directionLeftCenter, m_leftBeatInstances[beat] / m_timeToCenter);
 
                 if (m_leftBeatInstances[beat] / m_timeToCenter >= 1.0f)
                 {
@@ -142,7 +145,7 @@ namespace Music
             foreach (VisualBeat beat in m_rightBeatInstances.Keys.ToArray())
             {
                 m_rightBeatInstances[beat] = m_rightBeatInstances[beat] + Time.deltaTime;
-                beat.transform.position = Vector3.Lerp(m_rightSpawnPoint.position, m_center, m_rightBeatInstances[beat] / m_timeToCenter);
+                beat.transform.position = Vector3.Lerp(m_rightSpawnPoint.position, m_center + m_centerOffset * m_directionLeftCenter, m_rightBeatInstances[beat] / m_timeToCenter);
 
                 if (m_rightBeatInstances[beat] / m_timeToCenter >= 1.0f)
                 {
@@ -190,10 +193,12 @@ namespace Music
 
             VisualBeat leftBeat = m_beatPool.Acquire();
             leftBeat.transform.position = m_leftSpawnPoint.position;
+            leftBeat.SetSide(true);
             m_leftBeatInstances.Add(leftBeat, 0.0f);
 
             VisualBeat rightBeat = m_beatPool.Acquire();
             rightBeat.transform.position = m_rightSpawnPoint.position;
+            rightBeat.SetSide(false);
             m_rightBeatInstances.Add(rightBeat, 0.0f);
         }
 
