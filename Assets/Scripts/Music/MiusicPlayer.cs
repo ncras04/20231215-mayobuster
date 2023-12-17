@@ -37,6 +37,8 @@ public struct BeatInfo
 [RequireComponent(typeof(AudioSource))]
 public class MiusicPlayer : MonoBehaviour
 {
+    public SoundData Track => m_track;
+    
     [SerializeField]
     private SoundData m_track;
 
