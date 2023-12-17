@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -854,7 +854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b610960bf393d56409311bda3ffab532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bowlManager: {fileID: 1183386344}
 --- !u!4 &540625635
 Transform:
   m_ObjectHideFlags: 0
@@ -915,6 +914,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &798071562
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 459821908697153481, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 510831673}
+    - target: {fileID: 459821908697153481, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 540625634}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528505897915525017, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063148695215707940, guid: 06a839a087a68824fa497b30aa72ddd6,
+        type: 3}
+      propertyPath: m_Name
+      value: BeatVisualizer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06a839a087a68824fa497b30aa72ddd6, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,18 +1428,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c53b0aa86243a77468e6ffd4f2380fb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1183386344 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2892327148321718852, guid: eb7e14617f9d5134d814cb3845031dbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1995397163}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10df65b13db4898429429ce2b0f8f4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1222178749
@@ -2697,3 +2762,4 @@ SceneRoots:
   - {fileID: 1995397163}
   - {fileID: 1561251002}
   - {fileID: 1737208505}
+  - {fileID: 798071562}
