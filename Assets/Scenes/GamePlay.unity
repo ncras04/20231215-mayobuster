@@ -1244,6 +1244,18 @@ MonoBehaviour:
   sfxRequestCollection: {fileID: 11400000, guid: 6667cf6279d5ad14dbc3091bb9cd7e53,
     type: 2}
   fullLineEvent: {fileID: 11400000, guid: a9a1942fb305abe4baf2eb5f677a1c05, type: 2}
+--- !u!114 &1088802988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 723571845737423601, guid: 18ec44d2a1d2c074c97387a262735b73,
+    type: 3}
+  m_PrefabInstance: {fileID: 286959402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53b0aa86243a77468e6ffd4f2380fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1390783147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +1933,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1088802988}
+        m_TargetAssemblyTypeName: MayoEmitter, Assembly-CSharp
+        m_MethodName: MoveTheMayOOO
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 0ee69410-b282-42d0-88db-cfc76bd597d6
     m_ActionName: Inputs/KnobInput[/Mouse/delta]
   - m_PersistentCalls:

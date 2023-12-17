@@ -195,6 +195,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d9d3267e-eb6b-4c0c-8fa5-7fba4fd7ff35",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "06ce33c2-9925-489e-9e7f-ebd154e2fb96",
                     "path": "<HID::VIRGOO TURBOCHARGER VIRGOO TURBOCHARGER>/button4",
                     "interactions": "",
