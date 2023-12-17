@@ -35,7 +35,7 @@ public class RightKnobTemperature : MonoBehaviour
 
     private void Update()
     {
-        IsMultiply?.Invoke(m_currentAmount > m_maxAmount - (m_normal * 2) || m_currentAmount < m_maxAmount - (m_normal * 0.5f));
+        IsMultiply?.Invoke(m_currentAmount > m_maxAmount - (m_normal * 2) && m_currentAmount < m_maxAmount - (m_normal * 0.5f));
     }
     void FixedUpdate()
     {
