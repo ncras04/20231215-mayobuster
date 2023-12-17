@@ -13,11 +13,6 @@ public class BowlManager : MonoBehaviour
     private Bowl CurrentBowl;
     private Bowl OldBowl;
 
-    private void Awake()
-    {
-
-    }
-
     private void Start()
     {
         SpawnNewBowl();

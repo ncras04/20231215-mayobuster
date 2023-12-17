@@ -14,10 +14,14 @@ public class MayoEmitter : MonoBehaviour
     [SerializeField] private float MaxX = 10.0f;
     [SerializeField] private float MinX = -10.0f;
     [SerializeField] private float MouseSenibility = 0.05f;
+    [SerializeField] private RightKnobTemperature ThermoManager;
+
+    private float ThermoScale;
 
     void Start()
     {
         StartSpawn = Spawn();
+        ThermoManager.TemperatureChanged += UpdateThermo;
     }
 
     void Update()
@@ -36,13 +40,17 @@ public class MayoEmitter : MonoBehaviour
     public void MoveTheMayOOO(InputAction.CallbackContext _ctx)
     {
         Vector2 mouseDelta = _ctx.ReadValue<Vector2>();
-        Debug.Log(mouseDelta);
         float mouseDeltaX = mouseDelta.x * 0.001f * MouseSenibility;
 
         float NewX = transform.position.x + mouseDeltaX;
         float ClampedX = Mathf.Clamp(NewX, MinX, MaxX);
 
         transform.position = new Vector3(ClampedX, transform.position.y, transform.position.z);
+    }
+
+    private void UpdateThermo(float currentValue, int maxValue)
+    {
+        ThermoScale = currentValue * 0.01f;
     }
 
     private IEnumerator Spawn()
@@ -52,15 +60,13 @@ public class MayoEmitter : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             Transform SpawnTrans = transform;
 
-            if (LastMayoObject)
+            GameObject Obj = Instantiate(MayoPrefab, SpawnTrans.position, SpawnTrans.rotation);
+
+            if (ThermoManager)
             {
-                Vector3 RawBounds = LastMayoObject.GetComponent<BoxCollider>().size;
-                Vector3 Scale = LastMayoObject.transform.localScale;
-                Vector3 ScaledBounds = new Vector3(RawBounds.x * Scale.x, RawBounds.y * Scale.y, RawBounds.z * Scale.z);
-                ScaledBounds = new Vector3(0, ScaledBounds.y * 2.0f, 0);
+                Obj.transform.localScale = new Vector3(Obj.transform.localScale.x * ThermoScale, Obj.transform.localScale.y, Obj.transform.localScale.z * ThermoScale);
             }
 
-            GameObject Obj = Instantiate(MayoPrefab, SpawnTrans.position, SpawnTrans.rotation);
             if (LastMayoObject)
             {
                 ConfigurableJoint Joint = LastMayoObject.AddComponent<ConfigurableJoint>();
@@ -68,7 +74,6 @@ public class MayoEmitter : MonoBehaviour
             }
             LastMayoObject = Obj;
         }
-
     }
 
     private void SetUpJoint(GameObject Obj, ConfigurableJoint Joint)
