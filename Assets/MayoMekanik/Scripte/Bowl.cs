@@ -12,16 +12,11 @@ public class Bowl : MonoBehaviour
 
     private void Awake()
     {
-        AnimationController = GetComponent<Animator>();
+        AnimationController = GetComponentInChildren<Animator>();
     }
 
     public void MoveAwayBowl()
     {
         AnimationController.SetBool("MoveAway", true);
-    }
-
-    public void DestroyBowl() //Is called in Animation Event
-    {
-        Destroy(gameObject);
     }
 }
