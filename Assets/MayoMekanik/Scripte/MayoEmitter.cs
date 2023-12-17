@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MayoEmitter : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class MayoEmitter : MonoBehaviour
 
     public GameObject MayoPrefab;
     public MayoJointSettings MayoSettings;
+
+    [SerializeField] private float MaxX = 10.0f;
+    [SerializeField] private float MinX = -10.0f;
+    [SerializeField] private float MouseSenibility = 0.05f;
 
     void Start()
     {
@@ -26,6 +31,18 @@ public class MayoEmitter : MonoBehaviour
             StopCoroutine(StartSpawn);
             LastMayoObject = null;
         }
+    }
+
+    public void MoveTheMayOOO(InputAction.CallbackContext _ctx)
+    {
+        Vector2 mouseDelta = _ctx.ReadValue<Vector2>();
+        Debug.Log(mouseDelta);
+        float mouseDeltaX = mouseDelta.x * 0.001f * MouseSenibility;
+
+        float NewX = transform.position.x + mouseDeltaX;
+        float ClampedX = Mathf.Clamp(NewX, MinX, MaxX);
+
+        transform.position = new Vector3(ClampedX, transform.position.y, transform.position.z);
     }
 
     private IEnumerator Spawn()

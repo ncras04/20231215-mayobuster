@@ -48,6 +48,9 @@ MonoBehaviour:
   MayoPrefab: {fileID: 5843040702703853376, guid: 52a7e0f2f4ce9314c9218824fcfd2b8f,
     type: 3}
   MayoSettings: {fileID: 11400000, guid: fc987888b7b41a94a8e46ee609df0ca5, type: 2}
+  MaxX: 10
+  MinX: -10
+  MouseSenibility: 1.2
 --- !u!1 &6077174908388494186
 GameObject:
   m_ObjectHideFlags: 0
