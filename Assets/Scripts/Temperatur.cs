@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -10,11 +11,20 @@ public class Temperatur : MonoBehaviour
     private Image m_thermometer;
 
     [SerializeField]
+    private Image m_niceThermos;
+
+    [SerializeField]
     private RightKnobTemperature m_thermoManager;
 
     void Start()
     {
         m_thermoManager.TemperatureChanged += OnTemperatureChanged;
+        m_thermoManager.IsMultiplyChanged += OnMultiplyChanged;
+    }
+
+    private void OnMultiplyChanged(bool _obj)
+    {
+        m_niceThermos.gameObject.SetActive(_obj);
     }
 
     private void OnTemperatureChanged(float _currentAmount, int _maxAmount)
