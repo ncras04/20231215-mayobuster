@@ -142,6 +142,8 @@ MonoBehaviour:
   m_pengEvent: {fileID: 11400000, guid: dcf3dcabc332add489de0dd1d409f920, type: 2}
   m_reloadEvent: {fileID: 11400000, guid: 83a822394f003894a816834e3003aeb6, type: 2}
   m_spawnEvent: {fileID: 11400000, guid: 58d708a3269f7c04985f2628808453c0, type: 2}
+  m_catSounds: {fileID: 11400000, guid: df9e36cc94328c44cb385e6b00669799, type: 2}
+  m_catWinsEvent: {fileID: 11400000, guid: 603d5e24704440141939811d808143f0, type: 2}
   m_pawPivot: {fileID: 2127355911874869477}
   m_movementSpeedRange: {x: 2, y: 5}
   m_minDistanceToBowl: 2
