@@ -51,6 +51,7 @@ namespace Music
         private int m_barCount = 0;
         private int m_beatCount = 0;
 
+        private bool m_isPaused = false;
 
         private void Awake()
         {
@@ -62,9 +63,16 @@ namespace Music
 
             CalculateDistanceToCenter();
 
+            m_gameManager.OnGameOver += PauseAll;
+
             var audioConfig = AudioSettings.GetConfiguration();
             m_sampleRate = audioConfig.sampleRate;
             m_source = GetComponent<AudioSource>();
+        }
+
+        private void PauseAll()
+        {
+            m_isPaused = true;
         }
 
         private void Start()
@@ -93,6 +101,9 @@ namespace Music
 
         private void Update()
         {
+            if (m_isPaused)
+                return;
+
             UpdateCurrentVisualBeat();
             MoveBeats();
         }
