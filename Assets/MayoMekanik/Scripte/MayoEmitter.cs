@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class MayoEmitter : MonoBehaviour
 {
+    public IEnumerator StartSpawn;
     private GameObject LastMayoObject;
-    private IEnumerator StartSpawn;
 
     public GameObject MayoPrefab;
     public MayoJointSettings MayoSettings;
@@ -15,8 +15,11 @@ public class MayoEmitter : MonoBehaviour
     [SerializeField] private float MinX = -10.0f;
     [SerializeField] private float MouseSenibility = 0.05f;
     [SerializeField] private RightKnobTemperature ThermoManager;
+    [SerializeField] private AudioSource EmitterSound;
 
     private float ThermoScale;
+
+    public bool IsMayoRunning;
 
     void Start()
     {
@@ -25,19 +28,27 @@ public class MayoEmitter : MonoBehaviour
         {
             ThermoManager.TemperatureChanged += UpdateThermo;
         }
+
+        StartMayo();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(StartSpawn);
-        }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            StopCoroutine(StartSpawn);
-            LastMayoObject = null;
+            StopMayo();
         }
+    }
+
+    public void StartMayo()
+    {
+        IsMayoRunning = true;
+        StartCoroutine(StartSpawn);
+    }
+
+    public void StopMayo()
+    {
+        gameObject.SetActive(false);
     }
 
     public void MoveTheMayOOO(InputAction.CallbackContext _ctx)
@@ -58,7 +69,10 @@ public class MayoEmitter : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        while (true)
+        EmitterSound.loop = true;
+        EmitterSound.time = Random.Range(0, EmitterSound.clip.length);
+        EmitterSound.Play();
+        while (IsMayoRunning)
         {
             yield return new WaitForSeconds(0.1f);
             Transform SpawnTrans = transform;
