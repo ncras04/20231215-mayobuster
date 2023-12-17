@@ -132,7 +132,7 @@ namespace Tetris
                     movePart(right);
                     onBoardUpdated?.Invoke(board);
                 }
-                rightPressed = false;  
+                rightPressed = false;
             }
             if (upPressed)
             {
@@ -155,6 +155,21 @@ namespace Tetris
             rightPressed = Mathf.Approximately(1.0f, axis.x);
             upPressed = Mathf.Approximately(-1.0f, axis.y);
             downPressed = Mathf.Approximately(1.0f, axis.y);
+        }
+
+        public void OnStartPressed(InputAction.CallbackContext _context)
+        {
+            if (currentPart == null)
+                return;
+            if (_context.performed)
+            {
+                var down = new Direction { x = 0, y = 1 };
+                while (canMovePart(down))
+                {
+                    movePart(down);
+                }
+                removeFullLines();
+            }
         }
 
         void onTick()

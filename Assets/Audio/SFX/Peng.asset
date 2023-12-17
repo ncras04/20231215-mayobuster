@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 344a5665812f48b4ab47014b2ef25be9, type: 3}
-  m_Name: PengEvent
+  m_Name: Peng
   m_EditorClassIdentifier: 
-  m_volume: 1
+  m_volume: 0.7
   m_clips:
-  - {fileID: 8300000, guid: 2d2a074c5578c8349b6e06ef3f59720b, type: 3}
-  - {fileID: 8300000, guid: 90e07b77bb02acf46a1902639c50dfd0, type: 3}
+  - {fileID: 8300000, guid: e8e517aac4aadc941b7fb22b193ec5bd, type: 3}
   m_isPitchAffected: 0

@@ -22,6 +22,8 @@ namespace QuickTime
         [SerializeField]
         private AudioEvent m_pengEvent = null;
         [SerializeField]
+        private AudioEvent m_reloadEvent = null;
+        [SerializeField]
         private AudioEvent m_spawnEvent = null;
         [SerializeField]
         private Transform m_pawPivot = null;
@@ -84,6 +86,7 @@ namespace QuickTime
             m_spriteRenderer.enabled = true;
             m_spriteRenderer.sprite = m_catPawnSprites.Random();
             m_sfxRequestCollection.Add(AudioSFX.Request(m_spawnEvent));
+            m_sfxRequestCollection.Add(AudioSFX.Request(m_reloadEvent));
 
             m_isLeft = Random.Range(0, 2) == 0;
             if (m_isLeft)
